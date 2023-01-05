@@ -1,0 +1,600 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700|Simonetta:400,900|Amatic+SC:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.LogoColor {
+  background-color: #242F3B;
+}
+
+.darkGrayColor {
+  background-color: #0e0e0e;
+}
+
+a {
+  text-decoration: none;
+  font-style: none;
+  color: #4c7071;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #D4D9D2;
+  text-rendering: optimizeLegibility;
+  background-color: #242F3B;
+}
+
+header {
+  height: 60vh;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  header {
+    height: 70vh;
+  }
+}
+header .LogoWrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: inherit;
+  box-sizing: border-box;
+  background-color: #242F3B;
+  z-index: -1;
+}
+header .LogoWrapper .Logo-Desktop {
+  display: none;
+  max-width: 80%;
+  fill: #4c7071;
+}
+@media screen and (min-width: 1280px) {
+  header .LogoWrapper .Logo-Desktop {
+    display: block;
+  }
+}
+header .LogoWrapper .Logo-Mobile {
+  width: 100%;
+  fill: #4c7071;
+}
+@media screen and (min-width: 1280px) {
+  header .LogoWrapper .Logo-Mobile {
+    display: none;
+  }
+}
+header .LogoWrapper .header-background {
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100vw;
+  width: auto;
+  z-index: -1;
+}
+header .LogoWrapper .header-background-video {
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  min-width: 100vw;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+header #navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: top 0.3s;
+  box-sizing: border-box;
+  padding: 20px 20px 0 20px;
+  z-index: 1;
+}
+header #navigation a {
+  display: flex;
+  align-items: center;
+}
+header #navigation a .lazy_icon {
+  height: 45px;
+}
+header #navigation a .lazy_logo {
+  height: 35px;
+  padding-left: 10px;
+  transition: opacity 0.5s;
+}
+header #navigation div {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  header #navigation div {
+    display: none;
+  }
+}
+header #navigation div a {
+  color: #D4D9D2;
+  font-family: "Amiri", serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  transition: padding-top 0.2s;
+  padding: 0 10px;
+}
+header #navigation div a:hover {
+  padding-top: 8px;
+}
+@media screen and (min-width: 1024px) {
+  header #navigation div a {
+    font-size: 1.5rem;
+  }
+}
+
+#Store {
+  height: 40vh;
+}
+@media screen and (min-width: 768px) {
+  #Store {
+    height: 30vh;
+  }
+}
+#Store div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  #Store div {
+    justify-content: center;
+  }
+  #Store div img {
+    margin: 20px;
+  }
+}
+#Store div a {
+  display: flex;
+  justify-content: center;
+  width: 250px;
+}
+#Store div .nav_logo_steam {
+  height: 70px;
+  padding-top: 8;
+}
+#Store div .nav_logo_svg {
+  height: 40px;
+}
+
+#Projects #projectsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+}
+#Projects #projectsContainer #project-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 500px;
+  width: 100%;
+  background-position: center;
+  padding: 5%;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  #Projects #projectsContainer #project-items {
+    height: 400px;
+    padding: 50px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #Projects #projectsContainer #project-items {
+    padding: 150px;
+  }
+}
+#Projects #projectsContainer #project-items h1 {
+  display: inline-block;
+  background-color: rgba(76, 112, 113, 0.7803921569);
+  font-size: 2em;
+  padding: 20px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 85%;
+}
+@media screen and (min-width: 768px) {
+  #Projects #projectsContainer #project-items h1 {
+    font-size: 2.5em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #Projects #projectsContainer #project-items h1 {
+    font-size: 2.5em;
+  }
+}
+#Projects #projectsContainer #project-items h2 {
+  display: inline-block;
+  background-color: rgba(46, 74, 75, 0.7803921569);
+  font-size: 1.2em;
+  padding: 10px 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  text-transform: uppercase;
+  margin: 4px 0 8px 0;
+  max-width: 80%;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  #Projects #projectsContainer #project-items h2 {
+    font-size: 1.5em;
+  }
+}
+#Projects #projectsContainer #project-items .project-item-store {
+  background-color: #E09D36;
+  padding: 15px 15px;
+  color: white;
+  font-weight: 500;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0px 10px 0px 10px;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  #Projects #projectsContainer #project-items .project-item-store {
+    font-size: 1.3em;
+  }
+}
+#Projects #projectsContainer #project-items .project-item-showcase {
+  background-color: #2e4a4b;
+  padding: 14px 15px;
+  margin: 4px 10px 0px 10px;
+  color: white;
+  font-weight: 500;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+#Games .game {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  #Games .game {
+    height: 700px;
+  }
+}
+#Games .game.bottom-left, #Games .game.top-left {
+  justify-content: flex-start;
+}
+#Games .game.bottom-right, #Games .game.top-right {
+  justify-content: flex-end;
+}
+#Games .game a:link, #Games .game a:visited, #Games .game a:hover, #Games .game a:active {
+  color: #D4D9D2;
+}
+#Games .game .game-info {
+  box-sizing: border-box;
+  width: 80%;
+  padding: 20px;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  #Games .game .game-info {
+    width: 40%;
+    padding: 100px;
+  }
+}
+#Games .game .game-info.bottom-left, #Games .game .game-info.bottom-right {
+  align-self: flex-end;
+}
+#Games .game .game-info.top-left, #Games .game .game-info.top-right {
+  align-self: flex-start;
+}
+#Games .game .game-info img {
+  width: 100%;
+}
+#Games .game .game-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease;
+}
+#Games .game .game-img:hover {
+  transform: scale(1.1);
+}
+
+#Team {
+  padding: 80px 0 80px 0;
+  background-color: #1F2933;
+}
+#Team .team-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  font-variant: small-caps;
+  justify-content: space-evenly;
+}
+#Team .team-header h2 {
+  font-family: "Simonetta", sans-serif;
+  font-size: 40px;
+}
+@media screen and (min-width: 1024px) {
+  #Team .team-header h2 {
+    font-size: 40px;
+  }
+}
+#Team .team-header p {
+  font-family: "Simonetta", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  #Team .team-header p {
+    font-size: 20px;
+  }
+}
+#Team .team {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  #Team .team {
+    flex-wrap: wrap;
+  }
+}
+#Team .team .staff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 50vw;
+  font-variant: small-caps;
+  color: #D4D9D2;
+}
+@media screen and (min-width: 768px) {
+  #Team .team .staff {
+    width: 250px;
+    margin: 30px;
+  }
+}
+#Team .team .staff .portrait img {
+  position: relative;
+  width: 100%;
+}
+#Team .team .staff h3 {
+  margin: 10px;
+  font-size: 22px;
+  margin-bottom: 0;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  #Team .team .staff h3 {
+    font-size: 20px;
+  }
+}
+#Team .team .staff h4 {
+  margin: 7px;
+  color: #E09D36;
+  line-height: 1.2;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  #Team .team .staff h4 {
+    font-size: 16px;
+  }
+}
+#Team .team .staff p {
+  margin: 0px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  #Team .team .staff p {
+    font-size: 16px;
+  }
+}
+
+#Citat .citat-carousel {
+  height: 700px;
+  padding: 100 0 50 0;
+  box-sizing: border-box;
+  font-family: "Simonetta", sans-serif;
+}
+#Citat .citat-carousel .citat-carousel-item {
+  background-color: #1F2933;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#Citat .citat-carousel .citat-carousel-item:focus {
+  outline: none;
+}
+#Citat .citat-carousel .citat-carousel-item p {
+  width: 80%;
+  text-align: center;
+  line-height: 1.3em;
+  font-size: 1.2em;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  #Citat .citat-carousel .citat-carousel-item p {
+    width: 65%;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #Citat .citat-carousel .citat-carousel-item p {
+    width: 50%;
+    text-align: left;
+  }
+}
+#Citat .citat-carousel .citat-carousel-item h4 {
+  width: 80%;
+  text-align: center;
+  padding: 15px 50px 0 0;
+  font-size: 0.8em;
+  font-style: italic;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  #Citat .citat-carousel .citat-carousel-item h4 {
+    width: 65%;
+    text-align: right;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #Citat .citat-carousel .citat-carousel-item h4 {
+    width: 50%;
+    text-align: right;
+  }
+}
+#Citat .slick-prev {
+  left: 2%;
+}
+#Citat .slick-next {
+  right: 2%;
+}
+
+footer {
+  display: flex;
+  padding: 100px 0 100px 0;
+  height: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #1C252E;
+}
+footer .Logo-Desktop {
+  display: none;
+  height: 60px;
+}
+@media screen and (min-width: 1024px) {
+  footer .Logo-Desktop {
+    display: block;
+  }
+}
+footer .Logo-Mobile {
+  height: auto;
+  width: 60%;
+}
+@media screen and (min-width: 1024px) {
+  footer .Logo-Mobile {
+    display: none;
+  }
+}
+footer .social-media {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+footer p {
+  font-size: 12px;
+  color: #D4D9D2;
+}
+footer #navbar-footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer #navbar-footer h6 a {
+  flex-grow: 1;
+  text-align: center;
+  color: #E09D36;
+  font-weight: 300;
+  font-size: 11px;
+  padding: 10px;
+}
+
+.fab,
+.fas {
+  font-size: 30px;
+  margin: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fab:hover {
+  opacity: 0.7;
+}
+
+/* Facebook */
+a[class*=fa-] {
+  /*background: #3B5998;*/
+  color: #D4D9D2;
+  border-radius: 5px;
+}
+
+.deactive {
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+@media screen and (min-width: 1280px) {
+  .mobile {
+    display: none;
+  }
+}
+
+#support {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+#support div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#support div h1 {
+  text-align: center;
+  font-size: 2em;
+}
+#support div h2,
+#support div a {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.flip {
+  transform: scaleX(-1);
+}/*# sourceMappingURL=style.css.map */

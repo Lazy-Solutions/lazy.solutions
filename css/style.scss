@@ -1,0 +1,709 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700|Simonetta:400,900|Amatic+SC:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$OldBGColor: #091b1b; //#151F1F
+$background: #242F3B;
+$backgound-darker: #1F2933;
+$backgound-footer: #1C252E;
+$LogoColor: #4c7071; //#4c7071
+$steamcolor: #0e0e0e;
+$textColor: #D4D9D2;
+$textColorComplementary: #E09D36;
+$textColorComplementaryAlpha80: #e09c36ce;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin ms($point) {
+    @if $point==desk {
+        @media screen and (min-width: 1280px) {
+            @content;
+        }
+    }
+
+    @else if $point==tab {
+        @media screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point==mob {
+        @media screen and (min-width: 768px) {
+            @content;
+        }
+    }
+}
+
+@mixin mx($point) {
+    @if $point==desk {
+        @media screen and (max-width: 1280px) {
+            @content;
+        }
+    }
+
+    @else if $point==tab {
+        @media screen and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point==mob {
+        @media screen and (max-width: 768px) {
+            @content;
+        }
+    }
+}
+
+.LogoColor {
+    background-color: $background;
+}
+
+.darkGrayColor {
+    background-color: $steamcolor;
+}
+
+a {
+    text-decoration: none;
+    font-style: none;
+    color: $LogoColor;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: $textColor;
+    text-rendering: optimizeLegibility;
+    background-color: $background;
+}
+
+
+header {
+    height: 60vh;
+    box-sizing: border-box;
+
+    @include ms(mob) {
+        height: 70vh;
+    }
+
+    .LogoWrapper {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: inherit;
+        box-sizing: border-box;
+        background-color: $background;
+        z-index: -1;
+
+        .Logo-Desktop {
+            display: none;
+            max-width: 80%;
+            fill: $LogoColor;
+
+            @include ms(desk) {
+                display: block;
+            }
+        }
+
+        .Logo-Mobile {
+            width: 100%;
+            fill: $LogoColor;
+
+            @include ms(desk) {
+                display: none;
+            }
+        }
+
+        .header-background {
+            height: 100%;
+            width: 100%;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100vw;
+            width: auto;
+
+            z-index: -1;
+
+
+        }
+
+        .header-background-video {
+            height: 100%;
+            width: 100%;
+            left: 50%;
+            position: absolute;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            min-width: 100vw;
+            min-height: 100vh;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+    }
+
+    #navigation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: top 0.3s;
+        box-sizing: border-box;
+        padding: 20px 20px 0 20px;
+        z-index: 1;
+
+
+
+        a {
+            display: flex;
+            align-items: center;
+
+            .lazy_icon {
+                height: 45px;
+            }
+
+            .lazy_logo {
+                height: 35px;
+                padding-left: 10px;
+                transition: opacity 0.5s;
+            }
+        }
+
+
+        div {
+            display: flex;
+            height: 50px;
+            align-items: center;
+
+            @include mx(tab) {
+                display: none;
+            }
+
+            a {
+                color: $textColor;
+                font-family: 'Amiri', serif;
+                font-size: 2rem;
+                text-transform: capitalize;
+                font-variant: small-caps;
+                transition: padding-top 0.2s;
+                padding: 0 10px;
+
+                &:hover {
+                    padding-top: 8px;
+                }
+
+                @include ms(tab) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+    }
+}
+
+#Store {
+    height: 40vh;
+
+    @include ms(mob) {
+        height: 30vh;
+    }
+
+    div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include ms(mob) {
+            justify-content: center;
+
+            img {
+                margin: 20px;
+            }
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            width: 250px;
+        }
+
+        .nav_logo_steam {
+            height: 70px;
+            padding-top: 8;
+        }
+
+        .nav_logo_svg {
+            height: 40px;
+        }
+    }
+}
+
+#Projects {
+
+
+    #projectsContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        box-sizing: border-box;
+
+        #project-items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 500px;
+            width: 100%;
+            background-position: center;
+            padding: 5%;
+            box-sizing: border-box;
+
+            @include ms(mob) {
+                height: 400px;
+                padding: 50px;
+            }
+
+            @include ms(tab) {
+                padding: 150px;
+            }
+
+            h1 {
+                display: inline-block;
+                background-color: #4c7071c7;
+                font-size: 2em;
+                padding: 20px 20px;
+                text-transform: uppercase;
+                font-weight: 700;
+                width: max-content;
+                max-width: 85%;
+
+                @include ms(mob) {
+                    font-size: 2.5em;
+                }
+
+                @include ms(tab) {
+                    font-size: 2.5em;
+                }
+            }
+
+            h2 {
+                display: inline-block;
+                background-color: #2e4a4bc7;
+                font-size: 1.2em;
+                padding: 10px 10px;
+                width: max-content;
+                text-transform: uppercase;
+                margin: 4px 0 8px 0;
+                max-width: 80%;
+                font-weight: 300;
+
+                @include ms(mob) {
+                    font-size: 1.5em;
+                }
+            }
+
+            .project-item-store {
+                background-color: $textColorComplementary;
+                padding: 15px 15px;
+                color: white;
+                font-weight: 500;
+                width: max-content;
+                margin: 0px 10px 0px 10px;
+                text-transform: uppercase;
+
+                @include ms(mob) {
+                    font-size: 1.3em;
+                }
+
+
+            }
+
+            .project-item-showcase {
+                background-color: #2e4a4b;
+                padding: 14px 15px;
+                margin: 4px 10px 0px 10px;
+                color: white;
+                font-weight: 500;
+                font-size: 1em;
+                text-transform: uppercase;
+
+            }
+
+        }
+    }
+}
+
+#Games {
+    .game {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        @include ms(mob) {
+            height: 700px;
+        }
+
+        &.bottom-left,
+        &.top-left {
+            justify-content: flex-start;
+        }
+
+        &.bottom-right,
+        &.top-right {
+            justify-content: flex-end;
+        }
+
+        a {
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                color: $textColor;
+            }
+        }
+
+        .game-info {
+            box-sizing: border-box;
+            width: 80%;
+            padding: 20px;
+            z-index: 1;
+
+            @include ms(mob) {
+                width: 40%;
+                padding: 100px;
+            }
+
+            &.bottom-left,
+            &.bottom-right {
+                align-self: flex-end;
+            }
+
+            &.top-left,
+            &.top-right {
+                align-self: flex-start;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .game-img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+    }
+
+}
+
+#Team {
+    padding: 80px 0 80px 0;
+    background-color: $backgound-darker;
+
+    .team-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        font-variant: small-caps;
+        justify-content: space-evenly;
+
+        h2 {
+            font-family: "Simonetta", sans-serif;
+            font-size: 40px;
+
+            @include ms(tab) {
+                font-size: 40px;
+            }
+        }
+
+        p {
+            font-family: "Simonetta", sans-serif;
+            font-size: 20px;
+            text-align: center;
+
+            @include ms(tab) {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .team {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include ms(mob) {
+            flex-wrap: wrap;
+        }
+
+        .staff {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            width: 50vw;
+            font-variant: small-caps;
+            color: $textColor;
+
+            @include ms(mob) {
+                width: 250px;
+                margin: 30px;
+            }
+
+            .portrait {
+                img {
+                    position: relative;
+                    width: 100%;
+                }
+            }
+
+            h3 {
+                margin: 10px;
+                font-size: 22px;
+                margin-bottom: 0;
+                text-align: center;
+
+                @include mx(mob) {
+                    font-size: 20px;
+                }
+            }
+
+            h4 {
+                margin: 7px;
+                color: $textColorComplementary;
+                line-height: 1.2;
+                text-align: center;
+
+                @include mx(mob) {
+                    font-size: 16px;
+                }
+            }
+
+            p {
+                margin: 0px;
+                text-align: center;
+
+                @include mx(mob) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+#Citat {
+    .citat-carousel {
+        height: 700px;
+        padding: 100 0 50 0;
+        box-sizing: border-box;
+        font-family: "Simonetta", sans-serif;
+
+        .citat-carousel-item {
+            background-color: $backgound-darker;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            &:focus {
+                outline: none;
+            }
+
+            p {
+                width: 80%;
+                text-align: center;
+                line-height: 1.3em;
+                font-size: 1.2em;
+                box-sizing: border-box;
+
+                @include ms(mob) {
+                    width: 65%;
+                    text-align: left;
+                }
+
+                @include ms(tab) {
+                    width: 50%;
+                    text-align: left;
+                }
+            }
+
+            h4 {
+                width: 80%;
+                text-align: center;
+                padding: 15px 50px 0 0;
+                font-size: 0.8em;
+                font-style: italic;
+                box-sizing: border-box;
+
+                @include ms(mob) {
+                    width: 65%;
+                    text-align: right;
+                }
+
+                @include ms(tab) {
+                    width: 50%;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    .slick-prev {
+        left: 2%;
+    }
+
+    .slick-next {
+        right: 2%;
+    }
+}
+
+footer {
+    display: flex;
+    padding: 100px 0 100px 0;
+    height: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $backgound-footer;
+
+    .Logo-Desktop {
+        display: none;
+        height: 60px;
+
+        @include ms(tab) {
+            display: block;
+        }
+    }
+
+    .Logo-Mobile {
+        height: auto;
+        width: 60%;
+
+        @include ms(tab) {
+            display: none;
+        }
+    }
+
+    .social-media {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p {
+        font-size: 12px;
+        color: $textColor;
+    }
+
+    #navbar-footer {
+        display: flex;
+        flex-wrap: wrap;
+
+        h6 a {
+            flex-grow: 1;
+            text-align: center;
+            color: $textColorComplementary;
+            font-weight: 300;
+            font-size: 11px;
+            padding: 10px;
+        }
+    }
+}
+
+.fab,
+.fas {
+
+    font-size: 30px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+/* Add a hover effect if you want */
+.fab:hover {
+    opacity: 0.7;
+}
+
+/* Facebook */
+a[class*='fa-'] {
+    /*background: #3B5998;*/
+    color: $textColor;
+    border-radius: 5px;
+}
+
+.deactive {
+    display: none !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+    opacity: 0 !important;
+
+}
+
+.mobile {
+    @include ms(desk) {
+        display: none;
+    }
+}
+
+#support {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        h2,
+        a {
+            text-align: center;
+            font-size: 1.5em;
+        }
+    }
+}
+
+.flip {
+    transform: scaleX(-1);
+}

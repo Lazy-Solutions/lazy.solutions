@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+$background: #242F3B;
+$title: #21262b;
+$textColorComplementary: #E09D36;
+
+@mixin ms($point) {
+    @if $point==desk {
+        @media screen and (min-width: 1280px) {
+            @content;
+        }
+    }
+
+    @else if $point==tab {
+        @media screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point==mob {
+        @media screen and (min-width: 768px) {
+            @content;
+        }
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $background;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    height: 100%;
+}
+
+p {
+    line-height: 1.2;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+
+    @include ms(desk) {
+        justify-content: flex-start;
+        padding: 30px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    img {
+        height: 45px;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    @include ms(desk) {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+
+    }
+
+    #leftColumn {
+        @include ms(desk) {
+            height: 100%;
+            position: sticky;
+            top: 160px;
+            width: 32%;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 10px 0 10px;
+            margin-bottom: 30px;
+
+
+            @include ms(desk) {}
+
+            h1 {
+                font-size: 3em;
+                font-weight: bold;
+                padding: 5px 5px;
+                text-align: center;
+
+                @include ms(desk) {
+                    font-size: 4em;
+                }
+            }
+
+            h2 {
+                font-size: 1.2em;
+                font-weight: normal;
+                padding: 5px 5px;
+                text-align: center;
+
+                @include ms(desk) {
+                    font-size: 1.6em;
+                }
+            }
+
+            p {
+                text-align: center;
+                padding: 25px 5px;
+                font-size: 1em;
+                font-family: 'Lato', sans-serif;
+
+                @include ms(desk) {
+                    font-size: 1.2em;
+                }
+            }
+
+            a {
+                color: $textColorComplementary;
+                text-decoration: none;
+                font-size: 0.9em;
+                font-weight: 300;
+
+                @include ms(desk) {
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+
+    #rightColumn {
+        display: flex;
+        flex-direction: column;
+
+
+        @include ms(desk) {
+            padding-right: 5%;
+            margin: 100px 0 40px 0;
+        }
+
+        article {
+            margin: 10px 0;
+
+            @include ms(desk) {
+                width: 912px;
+            }
+
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                width: 100%;
+                background-color: #1F2933;
+                box-sizing: border-box;
+                color: white;
+                text-decoration: none;
+
+                @include ms(desk) {
+                    font-size: 1.1em;
+                }
+
+                img {
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                }
+
+                h1 {
+                    width: 100%;
+                    padding: 10px 5px;
+                    text-align: center;
+                    font-size: 1.4em;
+                    background-color: $title;
+
+                }
+
+                h3 {
+                    width: 100%;
+                    text-align: right;
+                    font-size: 0.5em;
+                    font-weight: 300;
+                    padding: 4px 5px;
+
+
+                    @include ms(desk) {
+                        padding: 4px 10px;
+                        font-size: 0.6em;
+                        font-family: 'Roboto', sans-serif;
+                    }
+                }
+
+                p {
+
+                    width: 100%;
+                    text-align: left;
+                    font-size: 1.1em;
+                    font-weight: 300;
+                    padding: 10px 15px;
+
+                    @include ms(desk) {
+                        font-size: 1em;
+                        font-family: 'Roboto', sans-serif;
+                    }
+
+                    span {
+                        color: $textColorComplementary;
+                        font-size: 0.9em;
+
+                        @include ms(desk) {
+                            font-size: 0.9em;
+                            font-family: 'Roboto', sans-serif;
+                        }
+                    }
+                }
+
+                quote {
+
+                    font-size: 0.85em;
+                    font-weight: 300;
+                    padding: 10px 25px;
+                    text-align: left;
+                    width: 100%;
+
+                    @include ms(desk) {
+                        font-size: 0.75em;
+                        font-family: 'Roboto', sans-serif;
+                    }
+                }
+
+            }
+        }
+    }
+}
