@@ -216,7 +216,6 @@ header #navigation div a:hover {
   padding: 20px 20px;
   text-transform: uppercase;
   font-weight: 700;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   max-width: 85%;
@@ -236,7 +235,6 @@ header #navigation div a:hover {
   background-color: rgba(46, 74, 75, 0.7803921569);
   font-size: 1.2em;
   padding: 10px 10px;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   text-transform: uppercase;
@@ -254,7 +252,6 @@ header #navigation div a:hover {
   padding: 15px 15px;
   color: white;
   font-weight: 500;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   margin: 0px 10px 0px 10px;

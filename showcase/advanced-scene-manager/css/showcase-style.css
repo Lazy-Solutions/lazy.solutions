@@ -52,7 +52,6 @@ main {
 @media screen and (min-width: 1280px) {
   main #leftColumn {
     height: 100%;
-    position: -webkit-sticky;
     position: sticky;
     top: 160px;
     width: 32%;
@@ -190,6 +189,9 @@ main #rightColumn article a p span {
     font-size: 0.9em;
     font-family: "Roboto", sans-serif;
   }
+}
+main #rightColumn article a p b {
+  font-weight: 500;
 }
 main #rightColumn article a quote {
   font-size: 0.85em;
