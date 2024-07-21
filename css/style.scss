@@ -279,38 +279,43 @@ header {
                 padding: 150px;
             }
 
-            h1 {
-                display: inline-block;
-                background-color: #4c7071c7;
-                font-size: 2em;
-                padding: 20px 20px;
-                text-transform: uppercase;
-                font-weight: 700;
-                width: max-content;
-                max-width: 85%;
+            a {
+                display: flex;
+                flex-direction: column;
+                color: inherit;
 
-                @include ms(mob) {
-                    font-size: 2.5em;
+                h1 {
+                    
+                    display: inline-block;
+                    background-color: #4c7071c7;
+                    font-size: 2em;
+                    padding: 20px 20px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    width: max-content;
+
+                    @include ms(mob) {
+                        font-size: 2.5em;
+                    }
+
+                    @include ms(tab) {
+                        font-size: 2.5em;
+                    }
                 }
 
-                @include ms(tab) {
-                    font-size: 2.5em;
-                }
-            }
+                h2 {
+                    display: inline-block;
+                    background-color: #2e4a4bc7;
+                    font-size: 1.2em;
+                    padding: 10px 10px;
+                    width: max-content;
+                    text-transform: uppercase;
+                    margin: 4px 0 8px 0;
+                    font-weight: 300;
 
-            h2 {
-                display: inline-block;
-                background-color: #2e4a4bc7;
-                font-size: 1.2em;
-                padding: 10px 10px;
-                width: max-content;
-                text-transform: uppercase;
-                margin: 4px 0 8px 0;
-                max-width: 80%;
-                font-weight: 300;
-
-                @include ms(mob) {
-                    font-size: 1.5em;
+                    @include ms(mob) {
+                        font-size: 1.5em;
+                    }
                 }
             }
 
