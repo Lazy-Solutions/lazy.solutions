@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #1F2933;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: #fafafa;
+}
+
+nav {
+  width: 100vw;
+  height: 50px;
+  display: grid;
+  place-items: center;
+}
+nav a {
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav a img {
+  height: 60%;
+}
+
+header {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 2/1;
+  max-height: 400px;
+  background: linear-gradient(to right, #3B5666, #407285);
+}
+header div {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+}
+header div img {
+  width: 100%;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 5vw;
+}
+section:nth-of-type(odd) {
+  background-color: #293643;
+}
+@media (min-width: 900px) {
+  section:nth-of-type(1) {
+    flex-direction: row;
+    gap: 40px;
+  }
+  section:nth-of-type(1) .info {
+    max-width: 500px;
+    text-align: left;
+  }
+}
+section .info {
+  flex: 1.1;
+  max-width: 700px;
+  text-align: center;
+}
+section .info h1,
+section .info h2 {
+  font-weight: normal;
+  /* Removes boldness from the heading */
+  font-size: 26px;
+}
+section .info p {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+section .info p span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+section .info p span .buy {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: inherit;
+  font-weight: bolder;
+  background-color: #E09D36;
+  width: 150px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+section .info p a {
+  color: #E09D36;
+}
+section iframe {
+  flex: 1;
+  width: 100%;
+  aspect-ratio: 16/9;
+  max-width: 500px;
+}
+section .review-stars {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  align-self: center;
+  margin-bottom: 40px;
+}
+section .review-stars img {
+  flex: 1 1;
+  height: auto;
+  flex: 1 1 calc(20% - 10px);
+  max-width: calc(20% - 10px);
+}/*# sourceMappingURL=style.css.map */

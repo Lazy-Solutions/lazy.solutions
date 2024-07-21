@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+$base-color: #1F2933;
+$secondary-color: #E09D36;
+$lightened-color: lighten($base-color, 5%);
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $base-color;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    color: #fafafa;
+}
+
+nav {
+    width: 100vw;
+    height: 50px;
+    display: grid;
+    place-items: center;
+
+    a {
+        height: 50px;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 60%;
+        }
+    }
+}
+
+header {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    max-height: 400px;
+    background: linear-gradient(to right, #3B5666, #407285);
+
+    div {
+        display: flex;
+        flex-direction: column;
+        max-width: 90%;
+
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+section {
+    &:nth-of-type(odd) {
+        background-color: $lightened-color;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5vw;
+
+
+    @media (min-width: 900px) {
+
+        &:nth-of-type(1) {
+            flex-direction: row;
+            gap: 40px;
+
+            .info{
+                max-width: 500px;
+                text-align: left;
+            }
+        }
+    }
+
+
+    .info {
+        flex: 1.1;
+        max-width: 700px;
+text-align: center;      
+  
+        h1,
+        h2 {
+            font-weight: normal;
+            /* Removes boldness from the heading */
+            font-size: 26px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 300;
+
+            span {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .buy {
+                    display: flex;
+                    text-decoration: none;
+                    color: inherit;
+                    font-size: 1.2em;
+                    text-transform: uppercase;
+                    color: inherit;
+                    font-weight: bolder;
+                    background-color: $secondary-color;
+                    width: 150px;
+                    height: 50px;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20px;
+                }
+            }
+
+            a {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    iframe {
+        flex: 1;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-width: 500px;
+    }
+
+    .review-stars {
+        display: flex;
+        width: 200px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+        align-self: center;
+        margin-bottom: 40px;
+
+        img {
+            flex: 1 1;
+            height: auto;
+            flex: 1 1 calc(20% - 10px);
+            max-width: calc(20% - 10px);
+        }
+    }
+}
