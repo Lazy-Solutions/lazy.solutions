@@ -213,6 +213,7 @@ header #navigation div a:hover {
   display: flex;
   flex-direction: column;
   color: inherit;
+  max-width: 100%;
 }
 #Projects #projectsContainer #project-items a h1 {
   display: inline-block;
@@ -221,8 +222,7 @@ header #navigation div a:hover {
   padding: 20px 20px;
   text-transform: uppercase;
   font-weight: 700;
-  width: -moz-max-content;
-  width: max-content;
+  max-width: 100%;
 }
 @media screen and (min-width: 768px) {
   #Projects #projectsContainer #project-items a h1 {
