@@ -3,4 +3,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://lazy.solutions/sitemap.xml
+Sitemap: https://www.lazy.solutions/sitemap.xml
