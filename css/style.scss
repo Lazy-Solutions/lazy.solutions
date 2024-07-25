@@ -592,11 +592,10 @@ header {
 
 footer {
     display: flex;
-    padding: 100px 0 100px 0;
     height: 250px;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     background-color: $backgound-footer;
 
     .Logo-Desktop {
