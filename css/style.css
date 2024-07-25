@@ -59,7 +59,7 @@ header .LogoWrapper .Logo-Desktop {
 header .LogoWrapper .Logo-Mobile {
   width: 100%;
   fill: #4c7071;
-  aspect-ratio: 26/5;
+  aspect-ratio: 5.05/1;
 }
 @media screen and (min-width: 1280px) {
   header .LogoWrapper .Logo-Mobile {
@@ -103,31 +103,31 @@ header #navigation {
   padding: 20px 20px 0 20px;
   z-index: 1;
 }
-header #navigation a {
+header #navigation div:nth-child(1) {
   display: flex;
   align-items: center;
 }
-header #navigation a .lazy_icon {
+header #navigation div:nth-child(1) .lazy_icon {
   height: 45px;
   aspect-ratio: 15/13;
 }
-header #navigation a .lazy_logo {
+header #navigation div:nth-child(1) .lazy_logo {
   height: 35px;
   padding-left: 10px;
   transition: opacity 0.5s;
   aspect-ratio: 26/5;
 }
-header #navigation div {
+header #navigation div:nth-child(2) {
   display: flex;
   height: 50px;
   align-items: center;
 }
 @media screen and (max-width: 1024px) {
-  header #navigation div {
+  header #navigation div:nth-child(2) {
     display: none;
   }
 }
-header #navigation div a {
+header #navigation div:nth-child(2) a {
   color: #D4D9D2;
   font-family: "Amiri", serif;
   font-size: 2rem;
@@ -136,11 +136,11 @@ header #navigation div a {
   transition: padding-top 0.2s;
   padding: 0 10px;
 }
-header #navigation div a:hover {
+header #navigation div:nth-child(2) a:hover {
   padding-top: 8px;
 }
 @media screen and (min-width: 1024px) {
-  header #navigation div a {
+  header #navigation div:nth-child(2) a {
     font-size: 1.5rem;
   }
 }
