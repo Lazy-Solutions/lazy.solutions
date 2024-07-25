@@ -47,6 +47,7 @@ header .LogoWrapper {
 }
 header .LogoWrapper .Logo-Desktop {
   display: none;
+  aspect-ratio: 96/19;
   max-width: 80%;
   fill: #4c7071;
 }
@@ -58,6 +59,7 @@ header .LogoWrapper .Logo-Desktop {
 header .LogoWrapper .Logo-Mobile {
   width: 100%;
   fill: #4c7071;
+  aspect-ratio: 26/5;
 }
 @media screen and (min-width: 1280px) {
   header .LogoWrapper .Logo-Mobile {
@@ -107,11 +109,13 @@ header #navigation a {
 }
 header #navigation a .lazy_icon {
   height: 45px;
+  aspect-ratio: 15/13;
 }
 header #navigation a .lazy_logo {
   height: 35px;
   padding-left: 10px;
   transition: opacity 0.5s;
+  aspect-ratio: 26/5;
 }
 header #navigation div {
   display: flex;
@@ -391,6 +395,7 @@ header #navigation div a:hover {
 #Team .team .staff .portrait img {
   position: relative;
   width: 100%;
+  aspect-ratio: 1/1;
 }
 #Team .team .staff h3 {
   margin: 10px;

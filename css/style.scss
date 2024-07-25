@@ -97,6 +97,7 @@ header {
 
         .Logo-Desktop {
             display: none;
+            aspect-ratio: 96 / 19;
             max-width: 80%;
             fill: $LogoColor;
 
@@ -108,6 +109,8 @@ header {
         .Logo-Mobile {
             width: 100%;
             fill: $LogoColor;
+            aspect-ratio: 26 / 5;
+
 
             @include ms(desk) {
                 display: none;
@@ -165,12 +168,14 @@ header {
 
             .lazy_icon {
                 height: 45px;
+                aspect-ratio: 15 / 13;
             }
 
             .lazy_logo {
                 height: 35px;
                 padding-left: 10px;
                 transition: opacity 0.5s;
+                aspect-ratio: 26 / 5;
             }
         }
 
@@ -264,6 +269,7 @@ header {
             height: 500px;
             width: 100%;
             background-position: center;
+
             padding: 5%;
             box-sizing: border-box;
 
@@ -487,6 +493,7 @@ header {
                 img {
                     position: relative;
                     width: 100%;
+                    aspect-ratio: 1 / 1;
                 }
             }
 
