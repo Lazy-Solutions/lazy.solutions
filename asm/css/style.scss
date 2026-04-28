@@ -37,12 +37,14 @@ nav {
 
 header {
     width: 100%;
-    min-height: 320px;
+   // min-height: 320px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #2a3a47, #407285);
     padding: 60px 20px 40px;
+
+
 
     img {
         max-width: 100%;
@@ -170,18 +172,26 @@ section {
 /* Responsive */
 @media (max-width: 768px) {
     header {
-        min-height: 340px;
+        min-height: 300px;
+        padding: 0;
     }
 
     section {
         padding: 80px 5vw;
+        text-align: left;
 
         h1 {
-            font-size: 2.1rem;
+            font-size: 1.5rem;
         }
 
         h2 {
-            font-size: 1.7rem;
+            font-size: 1.4rem;
+        }
+        p{
+            font-size: 1.1rem;
+        }  
+        iframe {
+            
         }
     }
 
