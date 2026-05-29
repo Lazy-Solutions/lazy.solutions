@@ -1,0 +1,115 @@
+@use 'variables' as *;
+
+// --- Footer Mixins ---
+@mixin footer-max($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    padding: 66px 20px;
+    color: $color-muted;
+    background:
+        radial-gradient(circle at 15% 0%, rgba($color-slate, 0.14), transparent 22rem),
+        #0b1113;
+    border-top: 1px solid $color-line;
+
+    .footer-inner {
+        width: min(1120px, 100%);
+        display: grid;
+        grid-template-columns: minmax(220px, 1fr) minmax(260px, auto) minmax(220px, 1fr);
+        gap: 32px;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .footer-brand {
+        display: grid;
+        gap: 14px;
+
+        p {
+            max-width: 360px;
+        }
+    }
+
+    .footer-links {
+        display: grid;
+        justify-items: center;
+        gap: 14px;
+
+        h2 {
+            color: $color-cream;
+            font-family: $font-display;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+    }
+
+    .footer-meta {
+        display: grid;
+        gap: 10px;
+        text-align: right;
+    }
+
+    p {
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+
+    @include footer-max(900px) {
+        .footer-inner,
+        .footer-brand,
+        .footer-meta {
+            justify-items: center;
+            text-align: center;
+        }
+        
+        .footer-brand p {
+            margin: 0 auto;
+        }
+
+        .social-media {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .footer-inner {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.social-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-self: center;
+    gap: 12px;
+}
+
+// Global icon styling for social media
+.social-media a,
+.social-media .fab,
+.social-media .fas {
+    width: 48px;
+    height: 48px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-line;
+    border-radius: 16px;
+    color: $color-cream;
+    background: rgba($color-cream, 0.06);
+    font-size: 22px;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-ink;
+        background: $color-secondary;
+        transform: translateY(-2px);
+    }
+}

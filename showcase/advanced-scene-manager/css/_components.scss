@@ -1,0 +1,123 @@
+@use '../../../css/variables' as *;
+@use 'base' as *;
+
+.showcase-header {
+    width: min(1120px, calc(100% - 40px));
+    margin: 160px auto 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 32px;
+
+    .header-content {
+        h1 {
+            font-family: $font-display;
+            font-size: clamp(2.2rem, 4vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            margin-top: 12px;
+        }
+
+        p:not(.section-kicker) {
+            color: $color-muted;
+            max-width: 600px;
+            margin-top: 16px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+    }
+
+    .header-cta {
+        text-align: right;
+        p {
+            font-size: 0.85rem;
+            color: $color-muted;
+            margin-bottom: 8px;
+        }
+        a {
+            color: $color-secondary;
+            font-weight: 800;
+            &:hover { text-decoration: underline; }
+        }
+    }
+}
+
+.showcase-grid {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto 120px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.showcase-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid $color-line;
+    border-radius: 28px;
+    background: linear-gradient(145deg, rgba($color-panel-soft, 0.96), rgba($color-panel, 0.98));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $color-shadow;
+    }
+
+    .card-visual {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 24px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        h2 {
+            font-family: $font-display;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .copyright {
+            font-size: 0.72rem;
+            color: $color-muted;
+            margin-top: -12px;
+            opacity: 0.8;
+        }
+
+        .description {
+            font-size: 0.96rem;
+            line-height: 1.6;
+            color: $color-muted;
+
+            span {
+                display: block;
+                margin-top: 8px;
+                color: $color-secondary;
+                font-size: 0.8rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+        }
+
+        quote {
+            margin-top: auto;
+            padding: 16px;
+            border-radius: 16px;
+            background: rgba($color-ink, 0.4);
+            border-left: 2px solid $color-secondary;
+            font-style: italic;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: $color-cream;
+        }
+    }
+}

@@ -5,135 +5,221 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-        content="Lazy Solutions is an innovative Indie Game Studio specializing in game development and high-quality Unity asset creation.">
+        content="Lazy Solutions creates professional Unity assets and production tools for developers who need reliable workflows.">
     <meta name="keywords"
-        content="Indie Game Studio, Game Development, Unity Assets, Web Development, Indie Games, Game Design, Unity Development, Patric Keisala, Lazy Solutions">
+        content="Unity Assets, Unity Tools, Unity Development, Asset Store, Scene Management, Workflow Tools, Patric Keisala, Lazy Solutions">
     <meta name="author" content="Patric Keisala">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
-    <meta name="theme-color" content="#4c7071">
+    <meta name="theme-color" content="#111d1f">
 
-    <!-- Preload and load Google Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Simonetta:wght@400;900&family=Amatic+SC:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Simonetta:wght@400;900&family=Amatic+SC:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+    </noscript>
 
-    <!-- Preload FontAwesome for better performance -->
     <link rel="preload" href="https://kit.fontawesome.com/f15145c18c.js" as="script" crossorigin="anonymous">
-
-    <!-- Styles and Scripts -->
-    <link preload rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script defer src="js/jquery.min.js"></script>
     <script defer src="https://kit.fontawesome.com/f15145c18c.js" crossorigin="anonymous"></script>
     <script defer src="js/script.js"></script>
-    
+
     <link rel="canonical" href="https://lazy.solutions/">
 
-    <title>Lazy Solutions - Indie Game Studio | Game & Unity Asset Development</title>
-
+    <title>Lazy Solutions - Professional Unity Assets</title>
 </head>
 
 <body>
-    <header>
-        <div class="LogoWrapper">
-            <img class="header-background" src="media/images/bg.webp" alt="">
-            <img src="media/images/company_logo_white.webp" alt="Company-logo" class="Logo-Desktop">
-            <img src="media/images/company_logo_white.webp" alt="Company-logo" class="Logo-Mobile">
+    <nav id="navigation" aria-label="Primary navigation">
+        <a class="brand-mark" href="./" aria-label="Lazy Solutions home">
+            <img class="lazy_icon" src="media/images/logo_white.webp" alt="">
+            <span class="brand-name">Lazy Solutions</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-links">
+            <a href="#Projects">Projects</a>
+            <a href="#Team">Team</a>
+            <a href="#navbar-footer">Social</a>
+            <a target="_blank" rel="noopener noreferrer"
+                href="//assetstore.unity.com/publishers/48996?aid=1100ljPVc&pubref=website">Asset Store</a>
+            <a href="support.html">Support</a>
         </div>
-        <nav id="navigation">
-            <div>
-                <img class="lazy_icon" src="media/images/logo_white.webp" alt="">
-                <img class="lazy_logo hidden" src="media/images/logo_noborder.webp" alt="">
+    </nav>
+
+    <header class="hero">
+        <div class="LogoWrapper" aria-hidden="true">
+            <img class="header-background" src="media/images/bg.webp" alt="">
+        </div>
+
+        <section class="hero-content" aria-labelledby="hero-title">
+            <p class="eyebrow">Professional Unity assets from Sweden</p>
+            <h1 id="hero-title">Professional Unity Scene Manager Tools for Production.</h1>
+            <p class="hero-copy">
+                Lazy Solutions develops focused Unity assets that reduce setup time, improve project structure, and
+                support teams building maintainable productions.
+            </p>
+            <div class="hero-actions">
+                <a class="button primary" href="#Projects">View Featured Asset</a>
+                <a class="button secondary" target="_blank" rel="noopener noreferrer"
+                    href="//assetstore.unity.com/publishers/48996?aid=1100ljPVc&pubref=website">Asset Store</a>
             </div>
-            <div>
-                <a href="#Team">Team</a>
-                <a href="#navbar-footer">Social</a>
-                <a target="_blank" href="//assetstore.unity.com/publishers/48996?aid=1100ljPVc&pubref=websiteAIM">Asset
-                    Store</a>
-                <a href="support.html">Support</a>
-            </div>
-        </nav>
+        </section>
     </header>
 
     <main>
-        <div id="Store" class="darkGrayColor">
-            <div>
-                <a target="_blank" href="https://lazysolutions.itch.io/"><img
-                        src="media/images/itch-io-logo-white-new.svg" alt="Itch.io Logo" class="nav_logo_svg"></a>
-            </div>
-        </div>
+        <section id="Store" class="store-strip" aria-label="Store links">
+            <p>Browse all published tools on the Unity Asset Store</p>
+            <a class="store-button" target="_blank" rel="noopener noreferrer"
+                href="//assetstore.unity.com/publishers/48996?aid=1100ljPVc&pubref=website">Publisher Page</a>
+        </section>
 
-        <article id="Projects" class="LogoColor">
-            <div id="projectsContainer">
-                <div id="project-items" style="background-image: url('./media/images/asm_bg_blue.webp');">
-                    <a href="/asm">
-                        <h1>Advanced Scene Manager 3</h1>
-                        <h2>SPEED UP YOUR WORKFLOW</h2>
-                    </a>
-                    <a class="project-item-store"
-                        href="https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-330926?aid=1100ljPVc&pubref=website">Unity
-                        Asset Store</a>
-                    <a class="project-item-showcase" href="./showcase/advanced-scene-manager/">Showcase</a>
+        <section id="Projects" class="projects-section" aria-labelledby="projects-title">
+            <div class="project-heading">
+                <div>
+                    <p class="section-kicker">Featured Asset</p>
+                    <h2 id="projects-title">Advanced Scene Manager 3</h2>
+                </div>
+                <p class="section-lead">
+                    A professional workflow asset for Unity teams that need structured scene loading, grouping, and
+                    project navigation.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-visual" style="background-image: url('./media/images/asm_feature.webp');">
+                    <span>Workflow Tool</span>
+                </div>
+                <div class="project-content">
+                    <p class="eyebrow">Scene workflow management</p>
+                    <h3>Keep complex Unity projects organized.</h3>
+                    <p>
+                        Advanced Scene Manager helps teams define reliable scene structures, reduce manual setup, and
+                        maintain consistent workflows across production.
+                    </p>
+                    <div class="project-actions">
+                        <a class="button primary" href="./asm/">Product Page</a>
+                        <a class="button tertiary" target="_blank" rel="noopener noreferrer"
+                            href="https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-330926?aid=1100ljPVc&pubref=website">Unity
+                            Asset Store</a>
+                        <a class="button secondary" href="./showcase/advanced-scene-manager/">Showcase</a>
+                    </div>
                 </div>
             </div>
-        </article>
-        <article id="Team" class="LogoColor">
+        </section>
 
-            <div class="team-header">
-                <h2>Our Team</h2>
+        <section id="Assets" class="assets-section" aria-labelledby="assets-title">
+            <div class="assets-header">
+                <p class="section-kicker">Other Assets</p>
+                <h2 id="assets-title">Additional workflow tools</h2>
                 <p>
-                    It's not about being lazy, it's about making it easier for oneself. <br />
-                    Our assets are created to simplify the work for not only ourselves but for you.
+                    Use these placeholders for upcoming assets, supporting tools, or documentation-focused products as
+                    the catalog grows.
                 </p>
-                <br />
+            </div>
+
+            <div class="asset-grid">
+                <article class="asset-card">
+                    <span class="asset-status">Coming Soon</span>
+                    <h3>Flow Editor</h3>
+                    <p>
+                        A visual node-based editor for Advanced Scene Manager, designed to help you map and manage complex scene flows with ease.
+                    </p>
+                    <a class="button secondary" target="_blank" rel="noopener noreferrer"
+                        href="https://assetstore.unity.com/publishers/48996?aid=1100ljPVc&pubref=website">Unity Asset Store</a>
+                </article>
+                <article class="asset-card">
+                    <span class="asset-status">Planned</span>
+                    <h3>SceneData</h3>
+                    <p>
+                        Powerful data persistence for your scenes.
+                    </p>
+                    <a class="button secondary" target="_blank" rel="noopener noreferrer"
+                        href="https://assetstore.unity.com/publishers/48996?aid=1100ljPVc&pubref=website">Unity Asset Store</a>
+                </article>
+                <article class="asset-card">
+                    <span class="asset-status">Undecided</span>
+                    <h3>Future Project</h3>
+                    <p>
+                        Stay tuned for more professional Unity assets and production workflow tools designed to improve your production pipeline.
+                    </p>
+                    <a class="button secondary" target="_blank" rel="noopener noreferrer"
+                        href="https://assetstore.unity.com/publishers/48996?aid=1100ljPVc&pubref=website">Unity Asset Store</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="Team" class="team-section" aria-labelledby="team-title">
+            <div class="team-header">
+                <p class="section-kicker">Team</p>
+                <h2 id="team-title">The team behind the assets</h2>
                 <p>
-                    Lazy Solutions is an indipendent studio, seated in Sweden.<br />
-                    We aim to bring you fun, and a bit weird games.
+                    We are an independent Swedish studio focused on Unity assets, editor tooling, and practical workflow
+                    improvements for production teams.
                 </p>
             </div>
 
             <div class="team">
-
-                <div class="staff">
+                <article class="staff">
                     <div class="portrait">
-                        <img src="media/images/portrait/patric.webp" alt="">
+                        <img src="media/images/portrait/patric.webp" alt="Portrait of Patric Keisala">
                     </div>
                     <h3>Patric Keisala</h3>
-                    <h4>Studio manager, Founder</h4>
+                    <h4>Studio Manager, Founder</h4>
                     <p>Sweden</p>
-                </div>
-                <div class="staff">
+                </article>
+                <article class="staff">
                     <div class="portrait">
-                        <img src="media/images/portrait/andreas.webp" alt="">
+                        <img src="media/images/portrait/andreas.webp" alt="Portrait of Andreas Ingeholm">
                     </div>
                     <h3>Andreas Ingeholm</h3>
                     <h4>Programmer</h4>
                     <p>Sweden</p>
-                </div>
+                </article>
             </div>
-        </article>
-
+        </section>
     </main>
 
     <footer id="navbar-footer">
-        <div class="social-media">
-            <a target="_blank" rel="noopener noreferrer" href="https://discord.com/invite/ayE4EHB6bQ" class="fab fa-discord"></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://twitch.tv/lazysolutions"
-                class="fab fa-twitch"></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@lazysolutions"
-                class="fab fa-youtube"></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Lazy_Solutions"
-                class="fab fa-twitter"></a>
-        </div>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p>Professional Unity assets and production workflow tools from Sweden.</p>
+            </div>
 
-        <img src="media/images/logo1.webp" alt="" class="Logo-Desktop">
-        <img src="media/images/logo1.webp" alt="" class="Logo-Mobile">
-        <br />
-        <p>This site contains Unity Asset Store affiliate links.</p>
-        <br />
-        <p>© 2018 - 2025 Patric Keisala. All rights reserved</p>
+            <div class="footer-links">
+                <h2>Social</h2>
+                <div class="social-media" aria-label="Social links">
+                    <a target="_blank" rel="noopener noreferrer" href="https://discord.com/invite/ayE4EHB6bQ"
+                        class="fab fa-discord" aria-label="Discord"></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@lazysolutions"
+                        class="fab fa-youtube" aria-label="YouTube"></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Lazy_Solutions"
+                        class="fab fa-x-twitter" aria-label="X"></a>
+                </div>
+            </div>
+
+            <div class="footer-meta">
+                <p>This site contains Unity Asset Store affiliate links.</p>
+                <p>&copy; 2018 - 2026 Patric Keisala. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
 
+</html>
+html>
+ts reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 
 </html>
-

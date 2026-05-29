@@ -1,0 +1,31 @@
+// --- Unified Brand Palette ---
+
+// Backgrounds & Darks
+$color-ink: #101719;         // Deepest background
+$color-panel: #142224;       // Standard section background
+$color-panel-soft: #1d3033;  // Card background / Hover states
+$color-panel-dark: #1F2933;  // ASM base / Alternative dark
+$color-panel-warm: #2d251e;  // Warm accent dark
+
+// Brand Colors
+$color-secondary: #E09D36;   // Vibrant Gold (Consolidated from #d99a3d and #E09D36)
+$color-secondary-light: #ffd983; // For gradients
+$color-teal: #69b6ab;        // Primary accent
+$color-teal-deep: #315f5f;   // Secondary accent
+$color-slate: #8fb0b5;       // Muted blue-grey accent
+$color-status: #cfe2e3;      // Light text for status badges
+$color-ember: #ee6f45;       // Highlight/Action accent
+
+// Typography & Neutrals
+$color-cream: #edf3f1;       // Primary text
+$color-muted: #aebcbd;       // Secondary/Muted text
+$color-white: #fafafa;       // Purest text highlight
+
+// Functional
+$color-line: rgba($color-cream, 0.16);
+$color-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+
+// Fonts
+$font-body: "Manrope", sans-serif;
+$font-display: "IBM Plex Sans", sans-serif;
+$font-nav: "IBM Plex Sans", sans-serif;
