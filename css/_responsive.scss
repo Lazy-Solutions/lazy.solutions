@@ -1,7 +1,7 @@
 @use 'variables' as *;
 @use 'base' as *;
 
-@include max(900px) {
+@include max($breakpoint-tablet) {
     #navigation {
         align-items: flex-start;
         border-radius: 28px;
@@ -27,7 +27,7 @@
     }
 }
 
-@include max(680px) {
+@include max($breakpoint-mobile) {
     #navigation {
         top: 0;
         left: 0;

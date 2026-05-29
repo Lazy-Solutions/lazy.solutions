@@ -1,7 +1,7 @@
 @use '../../css/variables' as *;
 @use 'base' as *;
 
-@include max(768px) {
+@include max($breakpoint-mobile) {
     #navigation {
         top: 0;
         left: 0;

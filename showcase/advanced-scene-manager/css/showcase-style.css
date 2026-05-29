@@ -355,7 +355,7 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   #navigation {
     top: 0;
     left: 0;

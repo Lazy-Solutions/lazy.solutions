@@ -25,6 +25,10 @@ $color-white: #fafafa;       // Purest text highlight
 $color-line: rgba($color-cream, 0.16);
 $color-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
 
+// Breakpoints
+$breakpoint-tablet: 900px;
+$breakpoint-mobile: 768px;
+
 // Fonts
 $font-body: "Manrope", sans-serif;
 $font-display: "IBM Plex Sans", sans-serif;

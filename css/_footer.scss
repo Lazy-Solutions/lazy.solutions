@@ -59,7 +59,7 @@ footer {
         line-height: 1.5;
     }
 
-    @include footer-max(900px) {
+    @include footer-max($breakpoint-tablet) {
         .footer-inner,
         .footer-brand,
         .footer-meta {
