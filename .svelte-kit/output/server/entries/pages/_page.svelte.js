@@ -12,7 +12,7 @@ function Home($$renderer) {
 		},
 		{
 			status: "Under Development",
-			title: "SceneData",
+			title: "Scene Data Components",
 			body: "Powerful data persistence for your scenes.",
 			href: publisherUrl
 		},
