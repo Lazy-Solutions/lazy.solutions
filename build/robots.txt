@@ -1,0 +1,6 @@
+# robots.txt file for https://lazy.solutions
+
+User-agent: *
+Disallow:
+
+Sitemap: https://lazy.solutions/sitemap.xml

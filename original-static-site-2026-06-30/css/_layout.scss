@@ -1,0 +1,107 @@
+@use 'variables' as *;
+@use 'base' as *;
+
+.hero-copy,
+.section-lead,
+.project-content p:not(.eyebrow),
+.assets-header p:not(.section-kicker),
+.asset-card p,
+.team-header p:not(.section-kicker) {
+    color: $muted;
+    line-height: 1.7;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 20px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-family: $font-body;
+    font-weight: 900;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        transform: translateY(-2px);
+    }
+
+    &.primary {
+        color: $ink;
+        background: linear-gradient(135deg, $honey, $color-secondary-light);
+        box-shadow: 0 14px 32px rgba($honey, 0.28);
+    }
+
+    &.secondary,
+    &.tertiary {
+        color: $cream;
+        border-color: $line;
+        background: rgba($cream, 0.08);
+
+        &:hover {
+            background: rgba($cream, 0.14);
+        }
+    }
+}
+
+.store-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 160px;
+    padding: 36px 20px;
+    color: $muted;
+    background: rgba(12, 18, 20, 0.86);
+    border-block: 1px solid $line;
+    text-align: center;
+
+    p {
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    a {
+        display: inline-flex;
+        padding: 14px 20px;
+        border-radius: 999px;
+        color: $ink;
+        background: linear-gradient(135deg, $honey, $color-secondary-light);
+        box-shadow: 0 16px 34px rgba($honey, 0.18);
+        font-weight: 900;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.projects-section h2,
+.assets-header h2,
+.team-header h2 {
+    font-family: $font-display;
+    font-size: clamp(2.4rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-wrap: balance;
+}
+
+.section-lead {
+    max-width: 760px;
+    margin-top: 18px;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.hidden {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.flip {
+    transform: scaleX(-1);
+}

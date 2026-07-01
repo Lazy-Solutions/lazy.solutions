@@ -39,6 +39,13 @@ $font-nav: "IBM Plex Sans", sans-serif;
     backdrop-filter: blur(18px);
 }
 
+@mixin page-card-surface($radius: 24px) {
+    border: 1px solid $line;
+    border-radius: $radius;
+    background: rgba($panel-soft, 0.72);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -51,6 +58,7 @@ html {
 
 body {
     min-width: 320px;
+    min-height: 100vh;
     color: $cream;
     font-family: $font-body;
     text-rendering: optimizeLegibility;

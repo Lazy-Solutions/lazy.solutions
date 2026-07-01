@@ -1,0 +1,19 @@
+{
+  "name": "lazy-solutions-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --open",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.68.0",
+    "@sveltejs/vite-plugin-svelte": "latest",
+    "sass-embedded": "^1.100.0",
+    "svelte": "latest",
+    "vite": "latest"
+  }
+}
