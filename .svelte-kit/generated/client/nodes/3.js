@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/asm/+page.svelte";
+export { default as component } from "../../../../src/routes/advanced-scene-manager/+page.svelte";

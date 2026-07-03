@@ -124,14 +124,20 @@
       "_server.js"
     ]
   },
-  "src/routes/asm/+page.svelte": {
-    "file": "entries/pages/asm/_page.svelte.js",
-    "name": "entries/pages/asm/_page.svelte",
-    "src": "src/routes/asm/+page.svelte",
+  "src/routes/advanced-scene-manager/+page.svelte": {
+    "file": "entries/pages/advanced-scene-manager/_page.svelte.js",
+    "name": "entries/pages/advanced-scene-manager/_page.svelte",
+    "src": "src/routes/advanced-scene-manager/+page.svelte",
     "isEntry": true,
     "imports": [
       "_server.js"
     ]
+  },
+  "src/routes/favicon.ico/+server.js": {
+    "file": "entries/endpoints/favicon.ico/_server.js",
+    "name": "entries/endpoints/favicon.ico/_server",
+    "src": "src/routes/favicon.ico/+server.js",
+    "isEntry": true
   },
   "src/routes/showcase/advanced-scene-manager/+page.svelte": {
     "file": "entries/pages/showcase/advanced-scene-manager/_page.svelte.js",

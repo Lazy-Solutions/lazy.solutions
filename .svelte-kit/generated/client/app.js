@@ -21,7 +21,7 @@ export const server_loads = [];
 
 export const dictionary = {
 		"/": [2],
-		"/asm": [3],
+		"/advanced-scene-manager": [3],
 		"/showcase/advanced-scene-manager": [4],
 		"/support": [5]
 	};

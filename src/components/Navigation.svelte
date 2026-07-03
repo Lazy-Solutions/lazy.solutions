@@ -7,7 +7,7 @@
   let navOpen = false;
   const rootHref = currentPath.includes('/showcase/advanced-scene-manager')
     ? '../../'
-    : currentPath.includes('/asm')
+    : currentPath.includes('/advanced-scene-manager')
       ? '../'
       : './';
 

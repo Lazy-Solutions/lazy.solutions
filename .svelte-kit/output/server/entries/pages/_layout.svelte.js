@@ -37,7 +37,7 @@ function Navigation($$renderer, $$props) {
 		let currentPath = fallback($$props["currentPath"], "/");
 		const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/publishers/48996";
 		let navOpen = false;
-		const rootHref = currentPath.includes("/showcase/advanced-scene-manager") ? "../../" : currentPath.includes("/asm") ? "../" : "./";
+		const rootHref = currentPath.includes("/showcase/advanced-scene-manager") ? "../../" : currentPath.includes("/advanced-scene-manager") ? "../" : "./";
 		$$renderer.push(`<nav id="navigation" aria-label="Primary navigation"${attr_class("", void 0, { "nav-open": navOpen })}><a class="brand-mark"${attr("href", rootHref)} aria-label="Lazy Solutions home"><img class="lazy_icon" src="/media/images/logo_white.webp" alt=""/> <span class="brand-name">Lazy Solutions</span></a> <button class="menu-toggle" aria-label="Toggle menu"${attr("aria-expanded", navOpen)}><i class="fas fa-bars"></i></button> <div class="nav-links"><a${attr("href", currentPath === "/" || currentPath.endsWith("/index.html") ? "#Projects" : `${rootHref}#Projects`)}>Projects</a> <a${attr("href", currentPath === "/" || currentPath.endsWith("/index.html") ? "#Team" : `${rootHref}#Team`)}>Team</a> <a href="#navbar-footer">Social</a> <a target="_blank" rel="noopener noreferrer"${attr("href", publisherUrl)}>Asset Store</a> <a href="/support/">Support</a></div></nav>`);
 		bind_props($$props, { currentPath });
 	});
