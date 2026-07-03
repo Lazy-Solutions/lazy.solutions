@@ -1,5 +1,5 @@
 import "../../chunks/internal.js";
-import { S as attr, c as store_get, l as unsubscribe_stores, m as getContext, n as bind_props, ot as fallback, s as slot, t as attr_class } from "../../chunks/server.js";
+import { c as unsubscribe_stores, o as slot, p as getContext, s as store_get, t as attr_class, x as attr } from "../../chunks/server.js";
 import "../../chunks/client.js";
 //#region node_modules/@sveltejs/kit/src/runtime/app/stores.js
 /**
@@ -32,15 +32,10 @@ var page = { subscribe(fn) {
 } };
 //#endregion
 //#region src/components/Navigation.svelte
-function Navigation($$renderer, $$props) {
-	$$renderer.component(($$renderer) => {
-		let currentPath = fallback($$props["currentPath"], "/");
-		const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/publishers/48996";
-		let navOpen = false;
-		const rootHref = currentPath.includes("/showcase/advanced-scene-manager") ? "../../" : currentPath.includes("/advanced-scene-manager") ? "../" : "./";
-		$$renderer.push(`<nav id="navigation" aria-label="Primary navigation"${attr_class("", void 0, { "nav-open": navOpen })}><a class="brand-mark"${attr("href", rootHref)} aria-label="Lazy Solutions home"><img class="lazy_icon" src="/media/images/logo_white.webp" alt=""/> <span class="brand-name">Lazy Solutions</span></a> <button class="menu-toggle" aria-label="Toggle menu"${attr("aria-expanded", navOpen)}><i class="fas fa-bars"></i></button> <div class="nav-links"><a${attr("href", currentPath === "/" || currentPath.endsWith("/index.html") ? "#Projects" : `${rootHref}#Projects`)}>Projects</a> <a${attr("href", currentPath === "/" || currentPath.endsWith("/index.html") ? "#Team" : `${rootHref}#Team`)}>Team</a> <a href="#navbar-footer">Social</a> <a target="_blank" rel="noopener noreferrer"${attr("href", publisherUrl)}>Asset Store</a> <a href="/support/">Support</a></div></nav>`);
-		bind_props($$props, { currentPath });
-	});
+function Navigation($$renderer) {
+	const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/publishers/48996";
+	let navOpen = false;
+	$$renderer.push(`<nav id="navigation" aria-label="Primary navigation"${attr_class("", void 0, { "nav-open": navOpen })}><a class="brand-mark"${attr("href", "/")} aria-label="Lazy Solutions home"><img class="lazy_icon" src="/media/images/logo_white.webp" alt=""/> <span class="brand-name">Lazy Solutions</span></a> <button class="menu-toggle" aria-label="Toggle menu"${attr("aria-expanded", navOpen)}><i class="fas fa-bars"></i></button> <div class="nav-links"><a href="/#Projects">Projects</a> <a href="/#Team">Team</a> <a href="/#navbar-footer">Social</a> <a target="_blank" rel="noopener noreferrer"${attr("href", publisherUrl)}>Asset Store</a> <a href="/support/">Support</a></div></nav>`);
 }
 //#endregion
 //#region src/components/Footer.svelte
@@ -52,9 +47,8 @@ function Footer($$renderer) {
 function _layout($$renderer, $$props) {
 	$$renderer.component(($$renderer) => {
 		var $$store_subs;
-		let pathname;
-		$: pathname = store_get($$store_subs ??= {}, "$page", page).url.pathname;
-		Navigation($$renderer, { currentPath: pathname });
+		$: store_get($$store_subs ??= {}, "$page", page).url.pathname;
+		Navigation($$renderer, {});
 		$$renderer.push(`<!----> <!--[-->`);
 		slot($$renderer, $$props, "default", {}, null);
 		$$renderer.push(`<!--]--> `);

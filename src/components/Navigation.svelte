@@ -1,15 +1,9 @@
 <script>
-  export let currentPath = '/';
-
   const publisherUrl =
     'https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/publishers/48996';
 
   let navOpen = false;
-  const rootHref = currentPath.includes('/showcase/advanced-scene-manager')
-    ? '../../'
-    : currentPath.includes('/advanced-scene-manager')
-      ? '../'
-      : './';
+  const homeHref = '/';
 
   function toggleMenu() {
     navOpen = !navOpen;
@@ -23,7 +17,7 @@
 </script>
 
 <nav id="navigation" class:nav-open={navOpen} aria-label="Primary navigation">
-  <a class="brand-mark" href={rootHref} aria-label="Lazy Solutions home" on:click={closeMenu}>
+  <a class="brand-mark" href={homeHref} aria-label="Lazy Solutions home" on:click={closeMenu}>
     <img class="lazy_icon" src="/media/images/logo_white.webp" alt="" />
     <span class="brand-name">Lazy Solutions</span>
   </a>
@@ -33,9 +27,9 @@
   </button>
 
   <div class="nav-links">
-    <a href={currentPath === '/' || currentPath.endsWith('/index.html') ? '#Projects' : `${rootHref}#Projects`} on:click={closeMenu}>Projects</a>
-    <a href={currentPath === '/' || currentPath.endsWith('/index.html') ? '#Team' : `${rootHref}#Team`} on:click={closeMenu}>Team</a>
-    <a href="#navbar-footer" on:click={closeMenu}>Social</a>
+    <a href="/#Projects" on:click={closeMenu}>Projects</a>
+    <a href="/#Team" on:click={closeMenu}>Team</a>
+    <a href="/#navbar-footer" on:click={closeMenu}>Social</a>
     <a target="_blank" rel="noopener noreferrer" href={publisherUrl} on:click={closeMenu}>Asset Store</a>
     <a href="/support/" on:click={closeMenu}>Support</a>
   </div>

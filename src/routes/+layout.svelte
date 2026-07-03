@@ -7,6 +7,6 @@
   $: pathname = $page.url.pathname;
 </script>
 
-<Navigation currentPath={pathname} />
+<Navigation />
 <slot />
 <Footer />

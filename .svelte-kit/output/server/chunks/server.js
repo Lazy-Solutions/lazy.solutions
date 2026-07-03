@@ -39,16 +39,6 @@ function deferred() {
 		reject
 	};
 }
-/**
-* @template V
-* @param {V} value
-* @param {V | (() => V)} fallback
-* @param {boolean} [lazy]
-* @returns {V}
-*/
-function fallback(value, fallback, lazy = false) {
-	return value === void 0 ? lazy ? fallback() : fallback : value;
-}
 //#endregion
 //#region node_modules/svelte/src/internal/client/reactivity/equality.js
 /** @import { Equals } from '#client' */
@@ -4113,19 +4103,6 @@ function slot(renderer, $$props, name, slot_props, fallback_fn) {
 	if (slot_fn !== void 0) slot_fn(renderer, slot_props);
 	else fallback_fn?.();
 }
-/**
-* Legacy mode: If the prop has a fallback and is bound in the
-* parent component, propagate the fallback value upwards.
-* @param {Record<string, unknown>} props_parent
-* @param {Record<string, unknown>} props_now
-*/
-function bind_props(props_parent, props_now) {
-	for (const key of Object.keys(props_now)) {
-		const initial_value = props_parent[key];
-		const value = props_now[key];
-		if (initial_value === void 0 && value !== void 0 && Object.getOwnPropertyDescriptor(props_parent, key)?.set) props_parent[key] = value;
-	}
-}
 /** @param {any} array_like_or_iterator */
 function ensure_array_like(array_like_or_iterator) {
 	if (array_like_or_iterator) return array_like_or_iterator.length !== void 0 ? array_like_or_iterator : Array.from(array_like_or_iterator);
@@ -4158,4 +4135,4 @@ function derived(fn) {
 	};
 }
 //#endregion
-export { HYDRATION_ERROR as $, set_active_effect as A, flushSync as B, escape_html as C, active_effect as D, writable as E, get_first_child as F, async_mode_flag as G, component_context as H, get_next_sibling as I, set_hydrate_node as J, hydrate_node as K, init_operations as L, component_root as M, clear_text_content as N, active_reaction as O, create_text as P, state_proxy_unmount as Q, mutable_source as R, attr as S, readable as T, pop$1 as U, boundary as V, push$1 as W, hydration_mismatch as X, set_hydrating as Y, lifecycle_double_unmount as Z, ssr_context as _, head as a, define_property as at, lifecycle_function_unavailable as b, store_get as c, run as ct, get_render_context as d, hydration_failed as et, createContext as f, setContext as g, hasContext as h, ensure_array_like as i, array_from as it, set_active_reaction as j, get as k, unsubscribe_stores as l, getContext as m, bind_props as n, LEGACY_PROPS as nt, render as o, fallback as ot, getAllContexts as p, hydrating as q, derived as r, STATE_SYMBOL as rt, slot as s, noop as st, attr_class as t, experimental_async_required as tt, get_user_code_location as u, hydratable_clobbering as v, is_passive_event as w, getAbortSignal as x, hydratable_serialization_failed as y, set as z };
+export { hydration_failed as $, set_active_reaction as A, boundary as B, is_passive_event as C, active_reaction as D, active_effect as E, get_next_sibling as F, hydrate_node as G, pop$1 as H, init_operations as I, set_hydrating as J, hydrating as K, mutable_source as L, clear_text_content as M, create_text as N, get as O, get_first_child as P, HYDRATION_ERROR as Q, set as R, escape_html as S, writable as T, push$1 as U, component_context as V, async_mode_flag as W, lifecycle_double_unmount as X, hydration_mismatch as Y, state_proxy_unmount as Z, hydratable_clobbering as _, render as a, noop as at, getAbortSignal as b, unsubscribe_stores as c, createContext as d, experimental_async_required as et, getAllContexts as f, ssr_context as g, setContext as h, head as i, define_property as it, component_root as j, set_active_effect as k, get_user_code_location as l, hasContext as m, derived as n, STATE_SYMBOL as nt, slot as o, run as ot, getContext as p, set_hydrate_node as q, ensure_array_like as r, array_from as rt, store_get as s, attr_class as t, LEGACY_PROPS as tt, get_render_context as u, hydratable_serialization_failed as v, readable as w, attr as x, lifecycle_function_unavailable as y, flushSync as z };

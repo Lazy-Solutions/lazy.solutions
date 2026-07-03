@@ -1,1 +1,0 @@
-import{q as e}from"./us47Awe6.js";e();
