@@ -21,10 +21,10 @@
   </header>
 
   <section class="asm-section asm-hero-section">
-    <h1>Advanced Scene Manager 3 <br /> A Better SceneManager for Unity</h1>
+    <h1>Advanced Scene Manager 3 <br /> A Better Unity Scene Manager for Additive Loading</h1>
     <p class="subtitle">
-      Simplify additive scene loading, loading screens, and multi-scene workflows with a powerful and reliable
-      <strong>SceneManager</strong> replacement designed for real game development.
+      Simplify additive scene loading, custom loading screens, and multi-scene workflows with a professional
+      <strong>Unity scene manager</strong> tool built for real game development.
     </p>
     <div class="asm-cta-buttons">
       <a href={assetStoreUrl} class="buy-btn" target="_blank" rel="noopener noreferrer">Get It on the Asset Store</a>
@@ -33,15 +33,14 @@
   </section>
 
   <section class="asm-section">
-    <h2>What is the best Unity Scene Manager?</h2>
+    <h2>What is the best Unity scene manager for complex projects?</h2>
     <p>
-      Advanced Scene Manager 3 (ASM3) is a complete <strong>Unity SceneManager</strong> replacement that makes
-      <strong>scene management in Unity</strong> significantly easier and more reliable.
+      Advanced Scene Manager 3 (ASM3) is a complete <strong>Unity scene manager</strong> replacement that makes
+      <strong>scene management in Unity</strong> more reliable for production teams and solo developers alike.
     </p>
     <p>
-      Whether you need to <strong>Unity Scene Manager load scene</strong> additively, create smooth custom loading
-      screens, or manage complex multi-scene setups, ASM3 removes the usual headaches associated with the built-in
-      SceneManager.
+      Whether you need to <strong>load scenes additively</strong>, build polished custom loading screens, or manage
+      complex multi-scene setups, ASM3 gives you a more structured approach than the built-in Unity SceneManager.
     </p>
   </section>
 
@@ -77,14 +76,17 @@
       {/each}
     </div>
     <p>
-      Since 2021, Advanced Scene Manager has helped hundreds of Unity developers build more stable and organized
+      Since 2021, Advanced Scene Manager has helped thousands of Unity developers build more stable and organized
       multi-scene games. Known for its ease of use and excellent support.
     </p>
   </section>
 
   <section class="asm-section">
-    <h2>Ready to simplify your scene management?</h2>
-    <p>Try the free trial first, then grab the full version on the Unity Asset Store.</p>
+    <h2>Ready to simplify your Unity scene management?</h2>
+    <p>
+      <a href={trialUrl} target="_blank" rel="noopener noreferrer">Try the free trial</a> first, then grab the full
+      version on the Unity Asset Store.
+    </p>
 
     <div class="asm-cta-buttons">
       <a href={assetStoreUrl} class="buy-btn" target="_blank" rel="noopener noreferrer">Buy on Unity Asset Store</a>

@@ -38,9 +38,9 @@ function ShowcaseAsm($$renderer) {
 function _page($$renderer) {
 	head("1s5y7f0", $$renderer, ($$renderer) => {
 		$$renderer.title(($$renderer) => {
-			$$renderer.push(`<title>Unity Scene Manager Showcase | Advanced Scene Manager 3 Examples</title>`);
+			$$renderer.push(`<title>Advanced Scene Manager Showcase | Unity Project Examples</title>`);
 		});
-		$$renderer.push(`<meta name="description" content="Showcase of projects and games built using Advanced Scene Manager for Unity."/> <meta name="keywords" content="Unity Scene Manager, Advanced Scene Manager showcase, Unity scene loading examples"/> <meta name="author" content="Patric Keisala"/> <link rel="canonical" href="https://lazy.solutions/showcase/advanced-scene-manager/"/>`);
+		$$renderer.push(`<meta name="description" content="See example Unity projects and showcase cases built with Advanced Scene Manager for structured scene loading and production workflows."/> <meta name="keywords" content="Unity Scene Manager, Advanced Scene Manager showcase, Unity scene loading examples, Unity workflow examples"/> <meta name="author" content="Patric Keisala"/> <link rel="canonical" href="https://lazy.solutions/showcase/advanced-scene-manager/"/> <meta property="og:title" content="Advanced Scene Manager Showcase | Unity Project Examples"/> <meta property="og:description" content="Explore example Unity projects and showcase cases built with Advanced Scene Manager."/> <meta property="og:url" content="https://lazy.solutions/showcase/advanced-scene-manager/"/> <meta property="og:type" content="website"/>`);
 	});
 	ShowcaseAsm($$renderer, {});
 }
