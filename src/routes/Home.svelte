@@ -16,7 +16,7 @@
     },
     {
       status: 'Under Development',
-      title: 'Scene Data Components',
+      title: 'Scene Components',
       body: 'Powerful data persistence for your scenes.',
       href: publisherUrl
     },
