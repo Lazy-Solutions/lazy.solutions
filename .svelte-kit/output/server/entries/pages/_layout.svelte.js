@@ -35,7 +35,7 @@ var page = { subscribe(fn) {
 function Navigation($$renderer) {
 	const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/publishers/48996";
 	let navOpen = false;
-	$$renderer.push(`<nav id="navigation" aria-label="Primary navigation"${attr_class("", void 0, { "nav-open": navOpen })}><a class="brand-mark"${attr("href", "/")} aria-label="Lazy Solutions home"><img class="lazy_icon" src="/media/images/logo_white.webp" alt=""/> <span class="brand-name">Lazy Solutions</span></a> <button class="menu-toggle" aria-label="Toggle menu"${attr("aria-expanded", navOpen)}><i class="fas fa-bars"></i></button> <div class="nav-links"><a href="/#Projects">Projects</a> <a href="/#Team">Team</a> <a href="/#navbar-footer">Social</a> <a target="_blank" rel="noopener noreferrer"${attr("href", publisherUrl)}>Asset Store</a> <a href="/support/">Support</a></div></nav>`);
+	$$renderer.push(`<nav id="navigation" aria-label="Primary navigation"${attr_class("", void 0, { "nav-open": navOpen })}><a class="brand-mark"${attr("href", "/")} aria-label="Lazy Solutions home"><img class="lazy_icon" src="/media/images/logo_white.webp" alt=""/> <span class="brand-name">Lazy Solutions</span></a> <button class="menu-toggle" aria-label="Toggle menu"${attr("aria-expanded", navOpen)}><i class="fas fa-bars"></i></button> <div class="nav-links"><a href="/#Projects">Projects</a> <a href="/#About">About Us</a> <a href="/#navbar-footer">Social</a> <a target="_blank" rel="noopener noreferrer"${attr("href", publisherUrl)}>Asset Store</a> <a href="/support/">Support</a></div></nav>`);
 }
 //#endregion
 //#region src/components/Footer.svelte

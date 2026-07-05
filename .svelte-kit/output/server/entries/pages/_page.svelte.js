@@ -44,8 +44,9 @@ function Home($$renderer) {
 		let asset = each_array[$$index];
 		$$renderer.push(`<article class="asset-card"><span class="asset-status">${escape_html(asset.status)}</span> <h3>${escape_html(asset.title)}</h3> <p>${escape_html(asset.body)}</p> <a class="button secondary" target="_blank" rel="noopener noreferrer"${attr("href", asset.href)}>Unity Asset Store</a></article>`);
 	}
-	$$renderer.push(`<!--]--></div></section> <section id="Team" class="team-section" aria-labelledby="team-title"><div class="team-header"><p class="section-kicker">Team</p> <h2 id="team-title">The team behind the assets</h2> <p>We are an independent Swedish studio focused on Unity assets, editor tooling, and practical workflow
-        improvements for production teams.</p></div> <div class="team"><!--[-->`);
+	$$renderer.push(`<!--]--></div></section> <section id="About" class="team-section" aria-labelledby="about-title"><div class="team-header"><p class="section-kicker">About Us</p> <h2 id="about-title">We try to make the complex feel simple</h2> <p>Lazy Solutions is an independent studio from Sweden. We started selling Unity assets in January 2021 with a
+        simple belief: good tools should make work easier, not add friction. We care about ease of use,
+        thoughtful UX, flexibility, and quality.</p></div> <div class="team"><!--[-->`);
 	const each_array_1 = ensure_array_like(team);
 	for (let $$index_1 = 0, $$length = each_array_1.length; $$index_1 < $$length; $$index_1++) {
 		let member = each_array_1[$$index_1];

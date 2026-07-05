@@ -124,13 +124,14 @@
     </div>
   </section>
 
-  <section id="Team" class="team-section" aria-labelledby="team-title">
+  <section id="About" class="team-section" aria-labelledby="about-title">
     <div class="team-header">
-      <p class="section-kicker">Team</p>
-      <h2 id="team-title">The team behind the assets</h2>
+      <p class="section-kicker">About Us</p>
+      <h2 id="about-title">We try to make the complex feel simple</h2>
       <p>
-        We are an independent Swedish studio focused on Unity assets, editor tooling, and practical workflow
-        improvements for production teams.
+        Lazy Solutions is an independent studio from Sweden. We started selling Unity assets in January 2021 with a
+        simple belief: good tools should make work easier, not add friction. We care about ease of use,
+        thoughtful UX, flexibility, and quality.
       </p>
     </div>
 

@@ -28,7 +28,7 @@
 
   <div class="nav-links">
     <a href="/#Projects" on:click={closeMenu}>Projects</a>
-    <a href="/#Team" on:click={closeMenu}>Team</a>
+    <a href="/#About" on:click={closeMenu}>About Us</a>
     <a href="/#navbar-footer" on:click={closeMenu}>Social</a>
     <a target="_blank" rel="noopener noreferrer" href={publisherUrl} on:click={closeMenu}>Asset Store</a>
     <a href="/support/" on:click={closeMenu}>Support</a>
