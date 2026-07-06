@@ -1,6 +1,6 @@
 <script>
   const publisherUrl =
-    'https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/publishers/48996';
+    'https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/publishers/48996';
 
   let navOpen = false;
   const homeHref = '/';

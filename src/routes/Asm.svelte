@@ -1,6 +1,6 @@
 <script>
   const assetStoreUrl =
-    'https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926';
+    'https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926';
   const trialUrl = 'https://github.com/Lazy-Solutions/AdvancedSceneManager/tree/main/trial';
 
   const features = [

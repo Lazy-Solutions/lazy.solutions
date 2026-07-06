@@ -1,6 +1,6 @@
 <script>
   const asmUrl =
-    'https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926';
+    'https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926';
 </script>
 
 <main class="support-page">

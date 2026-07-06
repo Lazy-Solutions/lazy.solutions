@@ -1,14 +1,14 @@
 import { S as escape_html, i as head, r as ensure_array_like, x as attr } from "../../chunks/server.js";
 //#region src/routes/Home.svelte
 function Home($$renderer) {
-	const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/publishers/48996";
-	const asmUrl = "https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926";
+	const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/publishers/48996";
+	const asmUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926";
 	const assets = [
 		{
 			status: "Released",
 			title: "Flow Editor",
 			body: "A visual node-based editor for Advanced Scene Manager, designed to help you map and manage complex scene flows with ease.",
-			href: "https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/packages/tools/visual-scripting/flow-editor-for-advanced-scene-manager-374938"
+			href: "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/visual-scripting/flow-editor-for-advanced-scene-manager-374938"
 		},
 		{
 			status: "Under Development",

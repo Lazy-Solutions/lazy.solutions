@@ -1,7 +1,7 @@
 import { S as escape_html, i as head, r as ensure_array_like, x as attr } from "../../../chunks/server.js";
 //#region src/routes/Asm.svelte
 function Asm($$renderer) {
-	const assetStoreUrl = "https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926";
+	const assetStoreUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926";
 	const trialUrl = "https://github.com/Lazy-Solutions/AdvancedSceneManager/tree/main/trial";
 	const features = [
 		["Additive Scene Loading", "Load and unload scenes cleanly without the usual headaches."],

@@ -1,10 +1,10 @@
 <script>
   const publisherUrl =
-    'https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/publishers/48996';
+    'https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/publishers/48996';
   const asmUrl =
-    'https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926';
+    'https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926';
   const flowEditorUrl =
-    'https://af.unity.com/sr/camref:1100ljPVc/destination:https://assetstore.unity.com/packages/tools/visual-scripting/flow-editor-for-advanced-scene-manager-374938';
+    'https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/visual-scripting/flow-editor-for-advanced-scene-manager-374938';
 
   const assets = [
     {
