@@ -1,5 +1,35 @@
 <script>
   import Support from '../Support.svelte';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    'url': 'https://lazy.solutions/support/',
+    'name': 'Support | Lazy Solutions Indie Game Studio',
+    'description': 'Support and help for Lazy Solutions Indie Game Studio assets and tools.',
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Lazy Solutions',
+      'url': 'https://lazy.solutions/'
+    },
+    'breadcrumb': {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        {
+          '@type': 'ListItem',
+          'position': 1,
+          'name': 'Home',
+          'item': 'https://lazy.solutions/'
+        },
+        {
+          '@type': 'ListItem',
+          'position': 2,
+          'name': 'Support',
+          'item': 'https://lazy.solutions/support/'
+        }
+      ]
+    }
+  };
 </script>
 
 <svelte:head>
@@ -16,37 +46,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Support | Lazy Solutions Indie Game Studio" />
   <meta name="twitter:description" content="Support and help for Lazy Solutions Indie Game Studio assets and tools." />
-  <script type="application/ld+json">
-    {JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      'url': 'https://lazy.solutions/support/',
-      'name': 'Support | Lazy Solutions Indie Game Studio',
-      'description': 'Support and help for Lazy Solutions Indie Game Studio assets and tools.',
-      'publisher': {
-        '@type': 'Organization',
-        'name': 'Lazy Solutions',
-        'url': 'https://lazy.solutions/'
-      },
-      'breadcrumb': {
-        '@type': 'BreadcrumbList',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'name': 'Home',
-            'item': 'https://lazy.solutions/'
-          },
-          {
-            '@type': 'ListItem',
-            'position': 2,
-            'name': 'Support',
-            'item': 'https://lazy.solutions/support/'
-          }
-        ]
-      }
-    })}
-  </script>
+  {@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
 </svelte:head>
 
 <Support />

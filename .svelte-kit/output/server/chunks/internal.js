@@ -1,5 +1,5 @@
 import "./internal2.js";
-import { $ as hydration_failed, A as set_active_reaction, B as boundary, C as is_passive_event, D as active_reaction, E as active_effect, F as get_next_sibling, G as hydrate_node, H as pop, I as init_operations, J as set_hydrating, K as hydrating, L as mutable_source, M as clear_text_content, N as create_text, O as get, P as get_first_child, Q as HYDRATION_ERROR, R as set, U as push, V as component_context, W as async_mode_flag, Y as hydration_mismatch, a as render, at as noop, b as getAbortSignal, d as createContext, et as experimental_async_required, f as getAllContexts, g as ssr_context, h as setContext, it as define_property, j as component_root, k as set_active_effect, m as hasContext, n as derived, ot as run, p as getContext, q as set_hydrate_node, rt as array_from, tt as LEGACY_PROPS, u as get_render_context, v as hydratable_serialization_failed, y as lifecycle_function_unavailable, z as flushSync } from "./server.js";
+import { $ as HYDRATION_ERROR, A as set_active_effect, B as flushSync, D as active_effect, F as get_first_child, G as async_mode_flag, H as component_context, I as get_next_sibling, J as set_hydrate_node, K as hydrate_node, L as init_operations, M as component_root, N as clear_text_content, O as active_reaction, P as create_text, R as mutable_source, U as pop, V as boundary, W as push, X as hydration_mismatch, Y as set_hydrating, _ as ssr_context, a as render, at as define_property, b as lifecycle_function_unavailable, d as get_render_context, et as hydration_failed, f as createContext, g as setContext, h as hasContext, it as array_from, j as set_active_reaction, k as get, m as getContext, n as derived, nt as LEGACY_PROPS, ot as noop, p as getAllContexts, q as hydrating, st as run, tt as experimental_async_required, w as is_passive_event, x as getAbortSignal, y as hydratable_serialization_failed, z as set } from "./server.js";
 import * as devalue from "devalue";
 //#region \0rolldown/runtime.js
 var __defProp = Object.defineProperty;
@@ -713,7 +713,7 @@ var options = {
 		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n    <link rel=\"icon\" href=\"/favicon.ico\" />\r\n    <script defer src=\"https://kit.fontawesome.com/f15145c18c.js\" crossorigin=\"anonymous\"><\/script>\r\n    " + head + "\r\n  </head>\r\n  <body data-sveltekit-preload-data=\"hover\">\r\n    <div style=\"display: contents\">" + body + "</div>\r\n  </body>\r\n</html>\r\n",
 		error: error_template_default
 	},
-	version_hash: "vp62ms"
+	version_hash: "fjup1s"
 };
 async function get_hooks() {
 	let handle;

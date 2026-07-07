@@ -1,5 +1,42 @@
 <script>
   import Home from './Home.svelte';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        'url': 'https://lazy.solutions/',
+        'name': 'Lazy Solutions',
+        'description': 'Professional Unity assets for scene management, workflow automation, and production-ready project structure.',
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Lazy Solutions',
+          'url': 'https://lazy.solutions/'
+        }
+      },
+      {
+        '@type': 'Organization',
+        'name': 'Lazy Solutions',
+        'url': 'https://lazy.solutions/',
+        'logo': {
+          '@type': 'ImageObject',
+          'url': 'https://lazy.solutions/media/images/asm_feature.webp'
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Home',
+            'item': 'https://lazy.solutions/'
+          }
+        ]
+      }
+    ]
+  };
 </script>
 
 <svelte:head>
@@ -28,44 +65,7 @@
     name="twitter:description"
     content="Professional Unity assets for scene management, workflow automation, and production-ready project structure."
   />
-  <script type="application/ld+json">
-    {JSON.stringify({
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'WebSite',
-          'url': 'https://lazy.solutions/',
-          'name': 'Lazy Solutions',
-          'description': 'Professional Unity assets for scene management, workflow automation, and production-ready project structure.',
-          'publisher': {
-            '@type': 'Organization',
-            'name': 'Lazy Solutions',
-            'url': 'https://lazy.solutions/'
-          }
-        },
-        {
-          '@type': 'Organization',
-          'name': 'Lazy Solutions',
-          'url': 'https://lazy.solutions/',
-          'logo': {
-            '@type': 'ImageObject',
-            'url': 'https://lazy.solutions/media/images/asm_feature.webp'
-          }
-        },
-        {
-          '@type': 'BreadcrumbList',
-          'itemListElement': [
-            {
-              '@type': 'ListItem',
-              'position': 1,
-              'name': 'Home',
-              'item': 'https://lazy.solutions/'
-            }
-          ]
-        }
-      ]
-    })}
-  </script>
+  {@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
 </svelte:head>
 
 <Home />
