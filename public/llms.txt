@@ -1,0 +1,16 @@
+# Lazy Solutions
+
+## About
+Lazy Solutions creates professional Unity assets and production tools for scene management, workflow automation, and maintainable game development pipelines.
+
+## Main pages
+- [Home](https://lazy.solutions/)
+- [Advanced Scene Manager](https://lazy.solutions/advanced-scene-manager/)
+- [Showcase](https://lazy.solutions/showcase/advanced-scene-manager/)
+- [Support](https://lazy.solutions/support/)
+
+## Topics
+- Unity scene management
+- Additive scene loading
+- Loading screens and multi-scene workflows
+- Unity asset documentation and support
