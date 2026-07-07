@@ -1,0 +1,26 @@
+import{E as e,F as t,J as n,M as r,N as i,S as a,Y as o,b as s,f as c,g as l,h as u,k as d,l as f,m as p,p as m,s as h,v as g}from"../chunks/DOxSoypL.js";import"../chunks/xihTtKlq.js";import"../chunks/r0YdtMvv.js";var _=g(`<b> </b>`),v=g(`<article class="showcase-card"><a target="_blank" rel="noopener noreferrer"><img class="card-visual"/> <div class="card-content"><h2> </h2> <p class="copyright"> </p> <p class="description"> <!> <span>Click to find out more!</span></p> <blockquote> </blockquote></div></a></article>`),y=g(`<main class="showcase-page"><header class="showcase-header"><div class="header-content"><p class="section-kicker">Showcase</p> <h1>Projects using Unity Scene Manager</h1> <p>Discover how top developers use the Advanced Scene Manager to handle their <strong>Unity Scene Manager load scene</strong> tasks and project organization.</p></div> <div class="header-cta"><p>Submit your project</p> <a href="mailto:nuwn@hotmail.com">nuwn@hotmail.com</a></div></header> <section class="showcase-grid" aria-label="Advanced Scene Manager project showcase"></section></main>`);function b(e){let r=[{title:`Seneca 7: A Cyberpunk Odyssey`,href:`https://store.steampowered.com/app/1901860/Seneca_7_A_Cyberpunk_Odyssey/`,image:`/media/images/showcase/Seneca7_CoverPhoto_1920x1080.jpg`,alt:`Seneca 7`,copyright:`"Seneca 7: A Cyberpunk Odyssey" © The Seneca Project 2022-2023`,description:`Build a new life in a cozy cyberpunk adventure RPG! Polluted air having you gasping for breath? Drowning in endless debt? Online dating getting you nowhere? Leave your worries behind and reboot your life on Seneca 7, where dreams come true!*`,note:`(Restrictions may apply. Results may vary.*)`,quote:`ASM has a lot of great features built-in, including loading screens, pause screens, and profiles. Creating scene collections that have persistent objects with the ability to toggle the opening and closing of collections from a single Scene Helper asset made organizing and optimizing our project that much easier!`},{title:`Paladin's Oath`,href:`https://store.steampowered.com/app/1671590/Paladins_Oath/`,image:`/media/images/showcase/paladinsoath.png`,alt:`Paladin's Oath`,copyright:`"Paladin's Oath" © Fire Biscuit Gaming`,description:`Complex Strategy Fantasy card game RPG inspired by board games like Mage Knight or Gloomhaven. Combines elements of RPG, light deck-building, puzzle and strategy.`,note:``,quote:`It allowed me to setup simple workflows to work on composite scenes as well as very quickly setup the entire flow of scenes for my game.`}];var s=y(),f=t(i(s),2);c(f,5,()=>r,m,(e,r)=>{var s=v(),c=i(s),f=i(c),m=t(f,2),g=i(m),y=i(g,!0);o(g);var b=t(g,2),x=i(b,!0);o(b);var S=t(b,2),C=i(S),w=t(C),T=e=>{var t=_(),n=i(t,!0);o(t),d(()=>u(n,a(r).note)),l(e,t)};p(w,e=>{a(r).note&&e(T)}),n(2),o(S);var E=t(S,2),D=i(E,!0);o(E),o(m),o(c),o(s),d(()=>{h(c,`href`,a(r).href),h(f,`src`,a(r).image),h(f,`alt`,a(r).alt),u(y,a(r).title),u(x,a(r).copyright),u(C,`${a(r).description??``} `),u(D,a(r).quote)}),l(e,s)}),o(f),o(s),l(e,s)}var x=s(g(`<meta name="description" content="See example Unity projects and showcase cases built with Advanced Scene Manager for structured scene loading and production workflows."/> <meta name="keywords" content="Unity Scene Manager, Advanced Scene Manager showcase, Unity scene loading examples, Unity workflow examples"/> <meta name="author" content="Patric Keisala"/> <link rel="canonical" href="https://lazy.solutions/showcase/advanced-scene-manager/"/> <meta property="og:title" content="Advanced Scene Manager Showcase | Unity Project Examples"/> <meta property="og:description" content="Explore example Unity projects and showcase cases built with Advanced Scene Manager."/> <meta property="og:image" content="https://lazy.solutions/media/images/asm_feature.webp"/> <meta property="og:url" content="https://lazy.solutions/showcase/advanced-scene-manager/"/> <meta property="og:type" content="website"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="Advanced Scene Manager Showcase | Unity Project Examples"/> <meta name="twitter:description" content="Explore example Unity projects and showcase cases built with Advanced Scene Manager."/> <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'url': 'https://lazy.solutions/showcase/advanced-scene-manager/',
+      'name': 'Advanced Scene Manager Showcase | Unity Project Examples',
+      'description': 'Explore example Unity projects and showcase cases built with Advanced Scene Manager.',
+      'breadcrumb': {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Home',
+            'item': 'https://lazy.solutions/'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Showcase',
+            'item': 'https://lazy.solutions/showcase/advanced-scene-manager/'
+          }
+        ]
+      }
+    })}
+  <\/script>`,1));function S(t){f(`1s5y7f0`,t=>{var i=x();n(24),e(()=>{r.title=`Advanced Scene Manager Showcase | Unity Project Examples`}),l(t,i)}),b(t,{})}export{S as component};

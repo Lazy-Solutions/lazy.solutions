@@ -21,10 +21,13 @@
   </header>
 
   <section class="asm-section asm-hero-section">
-    <h1>Advanced Scene Manager 3 <br /> A Better Unity Scene Manager for Additive Loading</h1>
+    <h1>Advanced Scene Manager 3 <br /> A better Unity scene manager for connected scenes</h1>
     <p class="subtitle">
-      Simplify additive scene loading, custom loading screens, and multi-scene workflows with a professional
-      <strong>Unity scene manager</strong> tool built for real game development.
+      Move scene thinking from isolated files and callbacks to collections, transitions, and persistence.
+      ASM3 gives your scenes a place to belong and makes Unity load scene workflows more predictable.
+    </p>
+    <p class="hero-note">
+      For reliable unity load scene workflows, ASM3 replaces manual SceneManager calls with SceneCollection.Open() and Scene.Open().
     </p>
     <div class="asm-cta-buttons">
       <a href={assetStoreUrl} class="buy-btn" target="_blank" rel="noopener noreferrer">Get It on the Asset Store</a>
@@ -33,14 +36,83 @@
   </section>
 
   <section class="asm-section">
+    <h2>How does Advanced Scene Manager 3 change scene management?</h2>
+    <p>
+      ASM changes the level at which developers think about scenes. Instead of treating scenes as isolated files,
+      it makes scene relationships explicit.
+    </p>
+    <p>
+      Before ASM: load this scene, wait for this callback, keep this object alive, call this manager, remember to unload it later.
+      After ASM: this collection groups these scenes, this profile defines startup, this scene persists through this lifecycle,
+      and this transition follows a structure.
+    </p>
+  </section>
+
+  <section class="asm-section">
+    <h2>The simplest way to understand ASM3</h2>
+    <p>
+      Scenes stop being individual files and become connected parts of a system. A project is not just a list of scenes;
+      it is a collection of relationships between scenes.
+    </p>
+    <p>
+      That is the real shift: ASM3 provides the place where scene decisions live, instead of scattering them across utilities and scripts.
+    </p>
+  </section>
+
+  <section class="asm-section">
+    <h2>What does ASM actually replace in your workflow?</h2>
+    <p>
+      ASM is not just a better loader. It replaces scattered scene control scripts with one organized system for scene flow.
+    </p>
+    <p>
+      A loading screen tool is a utility. A transition helper is a utility. ASM3 is the system where those scene decisions belong.
+    </p>
+  </section>
+
+  <section class="asm-section">
+    <h2>How do I load a scene in Unity with ASM3?</h2>
+    <p>
+      ASM3 makes scene loading part of the scene relationship system, instead of leaving raw SceneManager calls scattered across code.
+      For example:
+    </p>
+    <pre><code>public class SceneLoader : MonoBehaviour
+&#123;
+    [SerializeField] private SceneCollection gameplayCollection;
+    [SerializeField] private Scene mainMenuScene;
+
+    public void OpenGameplay()
+    &#123;
+        gameplayCollection.Open();
+    &#125;
+
+    public void OpenMainMenu()
+    &#123;
+        mainMenuScene.Open();
+    &#125;
+&#125;
+</code></pre>
+    <p>
+      <a href="https://github.com/Lazy-Solutions/AdvancedSceneManager" target="_blank" rel="noopener noreferrer">
+        Read the ASM documentation for scene collection and scene open workflows.
+      </a>
+    </p>
+    <p>
+      This is the core Unity load scene pattern for ASM3: use scene collections and scene open methods, not manual SceneManager plumbing.
+    </p>
+    <p>
+      These calls tell ASM3 what to open, while the system handles transition order, persistence, cleanup, and the rest of the scene flow.
+    </p>
+  </section>
+
+  <section class="asm-section">
     <h2>What is the best Unity scene manager for complex projects?</h2>
     <p>
-      Advanced Scene Manager 3 (ASM3) is a complete <strong>Unity scene manager</strong> replacement that makes
-      <strong>scene management in Unity</strong> more reliable for production teams and solo developers alike.
+      Advanced Scene Manager 3 (ASM3) is a complete <strong>Unity scene manager</strong> system that helps you define how scenes fit together,
+      when they load, and when they persist.
     </p>
     <p>
       Whether you need to <strong>load scenes additively</strong>, build polished custom loading screens, or manage
-      complex multi-scene setups, ASM3 gives you a more structured approach than the built-in Unity SceneManager.
+      complex multi-scene setups, ASM3 gives you structured scene management instead of manual scene plumbing.
     </p>
   </section>
 
