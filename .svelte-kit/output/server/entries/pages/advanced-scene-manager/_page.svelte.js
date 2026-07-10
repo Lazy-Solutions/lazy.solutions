@@ -4,20 +4,58 @@ function Asm($$renderer) {
 	const assetStoreUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926";
 	const trialUrl = "https://github.com/Lazy-Solutions/AdvancedSceneManager/tree/main/trial";
 	const features = [
-		["Additive Scene Loading", "Load and unload scenes cleanly without the usual headaches."],
-		["Custom Loading Screens", "Built-in support for smooth loading screens with progress handling."],
-		["Scene Collections", "Organize your scenes into groups and load them together easily."],
-		["Rich Loading Events", "Callbacks for every stage of the loading process."],
-		["Editor Visualization", "Helpful tools to see and manage your scene flow in the editor."],
-		["Persistent Objects", "Better handling of DontDestroyOnLoad and cross-scene references."]
+		["Additive Scene Management", "Build complete environments from multiple Unity scenes without custom loading infrastructure."],
+		["Loading Screens", "Keep Loading Screens connected to scene transitions and lifecycle events."],
+		["Scene Collections", "Define groups of scenes that belong together and manage them as complete setups."],
+		["Scene Lifecycle Handling", "Coordinate scene changes with predictable events and cleanup."],
+		["Editor Tools", "Manage scene setups directly from the Unity Editor instead of manually handling scene combinations and loading states."],
+		["Persistent Scenes", "Keep shared systems and selected Unity scenes active across transitions."]
 	];
-	$$renderer.push(`<main class="asm-page"><header class="asm-product-header"><div><img src="/media/images/web_asm_icon.webp" alt="Advanced Scene Manager 3 icon"/></div></header> <section class="asm-section asm-hero-section"><h1>Advanced Scene Manager 3 <br/> A better Unity scene manager for connected scenes</h1> <p class="subtitle">Move scene thinking from isolated files and callbacks to collections, transitions, and persistence.
-      ASM3 gives your scenes a place to belong and makes Unity load scene workflows more predictable.</p> <p class="hero-note">For reliable unity load scene workflows, ASM3 replaces manual SceneManager calls with SceneCollection.Open() and Scene.Open().</p> <div class="asm-cta-buttons"><a${attr("href", assetStoreUrl)} class="buy-btn" target="_blank" rel="noopener noreferrer">Get It on the Asset Store</a> <a${attr("href", trialUrl)} class="trial-btn" target="_blank" rel="noopener noreferrer">Try Free Trial</a></div></section> <section class="asm-section"><h2>How does Advanced Scene Manager 3 change scene management?</h2> <p>ASM changes the level at which developers think about scenes. Instead of treating scenes as isolated files,
-      it makes scene relationships explicit.</p> <p>Before ASM: load this scene, wait for this callback, keep this object alive, call this manager, remember to unload it later.
-      After ASM: this collection groups these scenes, this profile defines startup, this scene persists through this lifecycle,
-      and this transition follows a structure.</p></section> <section class="asm-section"><h2>The simplest way to understand ASM3</h2> <p>Scenes stop being individual files and become connected parts of a system. A project is not just a list of scenes;
-      it is a collection of relationships between scenes.</p> <p>That is the real shift: ASM3 provides the place where scene decisions live, instead of scattering them across utilities and scripts.</p></section> <section class="asm-section"><h2>What does ASM actually replace in your workflow?</h2> <p>ASM is not just a better loader. It replaces scattered scene control scripts with one organized system for scene flow.</p> <p>A loading screen tool is a utility. A transition helper is a utility. ASM3 is the system where those scene decisions belong.</p></section> <section class="asm-section"><h2>How do I load a scene in Unity with ASM3?</h2> <p>ASM3 makes scene loading part of the scene relationship system, instead of leaving raw SceneManager calls scattered across code.
-      For example:</p> <pre><code>public class SceneLoader : MonoBehaviour
+	$$renderer.push(`<main class="asm-page"><header class="asm-product-header"><div><img src="/media/images/web_asm_icon.webp" alt="Advanced Scene Manager 3 icon"/></div></header> <section class="asm-section asm-hero-section"><h1>The complete Unity Scene Manager for growing projects</h1> <p class="subtitle">Organize scenes, build additive scene workflows, and manage scene changes 
+      through one complete Unity Scene Manager designed for growing projects.</p> <p class="hero-note">Replace scattered loading scripts, bootstrap scenes, and custom scene
+      logic with one structured workflow for managing Unity scenes.</p> <div class="asm-cta-buttons"><a${attr("href", assetStoreUrl)} class="buy-btn" target="_blank" rel="noopener noreferrer">Get It on the Asset Store</a> <a${attr("href", trialUrl)} class="trial-btn" target="_blank" rel="noopener noreferrer">Try Free Trial</a></div></section> <section class="asm-section"><h2>Advanced scene management for growing Unity projects</h2> <p>As projects grow, scene handling expands far beyond <code>LoadSceneAsync()</code>. 
+      Multiple scenes need to load together, shared systems need to remain
+      active, Loading Screens and transitions become part of the player
+      experience, and different project configurations appear for development,
+      testing, and production.</p> <p><strong>Advanced Scene Manager is a Unity Scene Manager</strong> designed for projects
+        that need more structure than Unity's built-in scene loading provides.
+        It builds on Unity's scene functionality by providing a structured way
+        to organize scenes, manage additive scene workflows, control startup
+        behavior, and handle scene changes consistently across your entire
+        project.</p></section> <section class="asm-section"><h2>Organize your scenes</h2> <p>As Unity projects grow, scenes can become too large and difficult to
+      maintain. Separating gameplay, UI, lighting, audio, managers, and world
+      systems into dedicated scenes creates a more flexible project structure,
+      but managing how those scenes are combined becomes increasingly complex.</p> <p><strong>Advanced Scene Manager helps you organize these relationships using
+        Scene Collections and Profiles</strong> , giving you a clear way to define which scenes belong together and how
+      they should be combined. Instead of hiding scene rules inside custom
+      loading code, your scene structure becomes visible, configurable, and
+      easier to maintain.</p></section> <section class="asm-section"><h2>Built around additive scene management</h2> <p>As Unity projects grow, building everything inside a single scene becomes
+      difficult to manage. <strong>Additive scene management</strong> allows you to separate gameplay,
+      systems, and content into independent scenes while combining them into complete
+      experiences when needed.</p> <p>Advanced Scene Manager provides the structure around this approach, making
+      it easier to organize additive scenes, keep shared systems loaded, and
+      create consistent scene setups without building your own additive scene
+      framework.</p></section> <section class="asm-section"><h2>Stop building your own scene framework</h2> <p>Many Unity projects eventually create their own scene management layer. It
+      starts with a loading helper, a bootstrap scene, persistent managers,
+      additive loading utilities, and transition systems built around the
+      project's specific needs.</p> <p>Over time, these solutions become a framework that requires its own
+      design, documentation, maintenance, and debugging. <strong>Advanced Scene Manager gives you a dedicated Unity Scene Manager system</strong> for projects 
+      where scene handling has grown beyond simple loading, 
+      saving you the time and effort of designing, maintaining, and debugging your own solution.</p></section> <section class="asm-section"><div class="review-stars" aria-label="Five star review"><!--[-->`);
+	const each_array = ensure_array_like(Array(5));
+	for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
+		each_array[$$index];
+		$$renderer.push(`<img src="/media/images/star.webp" alt=""/>`);
+	}
+	$$renderer.push(`<!--]--></div> <blockquote class="review-quote">“I find myself importing this asset as a standard for my workflow now. It just saves me so much time and pain. ASM does pretty much what I'd want to build myself anyway in a way that makes sense.” <span class="review-quote-attribution">Lucideus, Unity Asset Store review</span></blockquote></section> <section class="asm-section"><h2>See Advanced Scene Manager 3 in Action</h2> <iframe width="100%" src="https://www.youtube.com/embed/K0wFdUaBmbw?rel=0&amp;modestbranding=1" title="Advanced Scene Manager 3 Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></section> <section class="asm-section"><h2>Key Features</h2> <div class="asm-features-grid"><!--[-->`);
+	const each_array_1 = ensure_array_like(features);
+	for (let $$index_1 = 0, $$length = each_array_1.length; $$index_1 < $$length; $$index_1++) {
+		let feature = each_array_1[$$index_1];
+		$$renderer.push(`<div class="asm-feature-item"><h3>${escape_html(feature[0])}</h3> <p>${escape_html(feature[1])}</p></div>`);
+	}
+	$$renderer.push(`<!--]--></div></section> <section class="asm-section"><h2>How do I load a scene in Unity with ASM3?</h2> <p>ASM3 makes scene loading part of your scene structure instead of scattering SceneManager calls throughout your project.
+      For example:</p> <pre><code>
+public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private SceneCollection gameplayCollection;
     [SerializeField] private Scene mainMenuScene;
@@ -32,23 +70,8 @@ function Asm($$renderer) {
         mainMenuScene.Open();
     }
 }
-</code></pre> <p><a href="https://github.com/Lazy-Solutions/AdvancedSceneManager" target="_blank" rel="noopener noreferrer">Read the ASM documentation for scene collection and scene open workflows.</a></p> <p>This is the core Unity load scene pattern for ASM3: use scene collections and scene open methods, not manual SceneManager plumbing.</p> <p>These calls tell ASM3 what to open, while the system handles transition order, persistence, cleanup, and the rest of the scene flow.</p></section> <section class="asm-section"><h2>What is the best Unity scene manager for complex projects?</h2> <p>Advanced Scene Manager 3 (ASM3) is a complete <strong>Unity scene manager</strong> system that helps you define how scenes fit together,
-      when they load, and when they persist.</p> <p>Whether you need to <strong>load scenes additively</strong>, build polished custom loading screens, or manage
-      complex multi-scene setups, ASM3 gives you structured scene management instead of manual scene plumbing.</p></section> <section class="asm-section"><h2>See Advanced Scene Manager 3 in Action</h2> <iframe width="100%" src="https://www.youtube.com/embed/K0wFdUaBmbw?rel=0&amp;modestbranding=1" title="Advanced Scene Manager 3 Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></section> <section class="asm-section"><h2>Key Features</h2> <div class="asm-features-grid"><!--[-->`);
-	const each_array = ensure_array_like(features);
-	for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
-		let feature = each_array[$$index];
-		$$renderer.push(`<div class="asm-feature-item"><h3>${escape_html(feature[0])}</h3> <p>${escape_html(feature[1])}</p></div>`);
-	}
-	$$renderer.push(`<!--]--></div></section> <section class="asm-section"><div class="review-stars" aria-label="Five star review"><!--[-->`);
-	const each_array_1 = ensure_array_like(Array(5));
-	for (let $$index_1 = 0, $$length = each_array_1.length; $$index_1 < $$length; $$index_1++) {
-		each_array_1[$$index_1];
-		$$renderer.push(`<img src="/media/images/star.webp" alt=""/>`);
-	}
-	$$renderer.push(`<!--]--></div> <p>Since 2021, Advanced Scene Manager has helped thousands of Unity developers build more stable and organized
-      multi-scene games. Known for its ease of use and excellent support.</p></section> <section class="asm-section"><h2>Ready to simplify your Unity scene management?</h2> <p><a${attr("href", trialUrl)} target="_blank" rel="noopener noreferrer">Try the free trial</a> first, then grab the full
-      version on the Unity Asset Store.</p> <div class="asm-cta-buttons"><a${attr("href", assetStoreUrl)} class="buy-btn" target="_blank" rel="noopener noreferrer">Buy on Unity Asset Store</a></div> <p class="support">Questions? Join our <a href="https://discord.com/invite/ayE4EHB6bQ" target="_blank" rel="noopener noreferrer">Discord community</a> for support and updates.</p></section></main>`);
+</code></pre> <p><a href="https://github.com/Lazy-Solutions/AdvancedSceneManager" target="_blank" rel="noopener noreferrer">Read the ASM documentation for scene collection and scene open
+        workflows.</a></p></section> <section class="asm-section"><h2>Ready to simplify your Unity scene management?</h2> <p class="asm-cta-intro"><a${attr("href", trialUrl)} target="_blank" rel="noopener noreferrer">Try the free trial</a> first, then grab the full version on the Unity Asset Store.</p> <div class="asm-cta-buttons asm-cta-buttons-final"><a${attr("href", assetStoreUrl)} class="buy-btn" target="_blank" rel="noopener noreferrer">Buy on Unity Asset Store</a></div> <p class="support asm-cta-support">Questions? Join our <a href="https://discord.com/invite/ayE4EHB6bQ" target="_blank" rel="noopener noreferrer">Discord community</a> for support and updates.</p></section></main>`);
 }
 //#endregion
 //#region src/routes/advanced-scene-manager/+page.svelte
