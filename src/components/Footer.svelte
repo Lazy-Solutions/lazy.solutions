@@ -6,7 +6,7 @@
 
     <div class="footer-links">
       <h2>Social</h2>
-      <div class="social-media" aria-label="Social links">
+      <nav class="social-media" aria-label="Social links">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -28,7 +28,7 @@
           class="fab fa-x-twitter"
           aria-label="X"
         ></a>
-      </div>
+      </nav>
     </div>
 
     <div class="footer-meta">
