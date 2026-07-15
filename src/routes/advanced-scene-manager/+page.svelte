@@ -85,7 +85,7 @@
 </script>
 
 <svelte:head>
-  <title>Advanced Scene Manager 3 | Unity Scene Manager & Load Scene Workflow</title>
+  <title>Advanced Scene Manager 3 | Unity Scene Manager</title>
   <meta
     name="description"
     content="Advanced Scene Manager 3 is a Unity scene manager for additive scene loading, unity load scene workflows, loading screens, and reliable multi-scene workflows."
@@ -95,7 +95,7 @@
     content="Advanced Scene Manager, SceneManager Unity, Unity scene management, Unity scene manager, unity load scene, additive scene loading, Unity asset, multi-scene workflows"
   />
   <meta name="author" content="Patric Keisala" />
-  <link rel="canonical" href="https://lazy.solutions/advanced-scene-manager/" />
+  <link rel="canonical" href="https://lazy.solutions/advanced-scene-manager" />
   <meta name="google-site-verification" content="UOtRF1dl2NLgyJQr4NMBxI7m5Az1jrhrCb3ya5N2MNg" />
   <meta property="og:title" content="Advanced Scene Manager 3 | Unity Scene Manager & Load Scene Workflow" />
   <meta
