@@ -1,4 +1,13 @@
-import { C as escape_html, S as attr, i as head, r as ensure_array_like, u as html } from "../../../chunks/server.js";
+import { C as attr, a as head, d as html, i as ensure_array_like, n as bind_props, w as escape_html } from "../../../chunks/server.js";
+//#region src/components/YouTube.svelte
+function YouTube($$renderer, $$props) {
+	let id = $$props["id"];
+	$$renderer.push("<!--[-1-->");
+	$$renderer.push(`<button class="youtube-preview" aria-label="Play video"><img${attr("src", `https://img.youtube.com/vi/${id}/maxresdefault.jpg`)} alt="Video preview"/></button>`);
+	$$renderer.push(`<!--]-->`);
+	bind_props($$props, { id });
+}
+//#endregion
 //#region src/routes/Asm.svelte
 function Asm($$renderer) {
 	const assetStoreUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926";
@@ -11,7 +20,7 @@ function Asm($$renderer) {
 		["Editor Tools", "Manage scene setups directly from the Unity Editor instead of manually handling scene combinations and loading states."],
 		["Persistent Scenes", "Keep shared systems and selected Unity scenes active across transitions."]
 	];
-	$$renderer.push(`<main class="asm-page"><header class="asm-product-header"><div><img src="/media/images/web_asm_icon.webp" alt="Advanced Scene Manager 3 icon"/></div></header> <section class="asm-section asm-hero-section"><h1>The complete Unity Scene Manager for growing projects</h1> <p class="subtitle">Organize scenes, build additive scene workflows, and manage scene changes 
+	$$renderer.push(`<main class="asm-page"><header class="asm-product-header"><div><img src="/media/images/web_asm_icon.webp" alt="Advanced Scene Manager 3 icon" fetchpriority="high" width="660" height="200"/></div></header> <section class="asm-section asm-hero-section"><h1>The complete Unity Scene Manager for growing projects</h1> <p class="subtitle">Organize scenes, build additive scene workflows, and manage scene changes 
       through one complete Unity Scene Manager designed for growing projects.</p> <p class="hero-note">Replace scattered loading scripts, bootstrap scenes, and custom scene
       logic with one structured workflow for managing Unity scenes.</p> <div class="asm-cta-buttons"><a${attr("href", assetStoreUrl)} class="buy-btn" target="_blank" rel="noopener noreferrer">Get It on the Asset Store</a> <a${attr("href", trialUrl)} class="trial-btn" target="_blank" rel="noopener noreferrer">Try Free Trial</a></div></section> <section class="asm-section"><h2>Advanced scene management for growing Unity projects</h2> <p>As projects grow, scene handling expands far beyond <code>LoadSceneAsync()</code>. 
       Multiple scenes need to load together, shared systems need to remain
@@ -47,7 +56,9 @@ function Asm($$renderer) {
 		each_array[$$index];
 		$$renderer.push(`<img src="/media/images/star.webp" alt="Review star"/>`);
 	}
-	$$renderer.push(`<!--]--></div> <blockquote class="review-quote">“I find myself importing this asset as a standard for my workflow now. It just saves me so much time and pain. ASM does pretty much what I'd want to build myself anyway in a way that makes sense.” <span class="review-quote-attribution">Lucideus, Unity Asset Store review</span></blockquote></section> <section class="asm-section"><h2>See Advanced Scene Manager 3 in Action</h2> <iframe width="100%" src="https://www.youtube.com/embed/K0wFdUaBmbw?rel=0&amp;modestbranding=1" title="Advanced Scene Manager 3 Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></section> <section class="asm-section"><h2>Key Features</h2> <div class="asm-features-grid"><!--[-->`);
+	$$renderer.push(`<!--]--></div> <blockquote class="review-quote">“I find myself importing this asset as a standard for my workflow now. It just saves me so much time and pain. ASM does pretty much what I'd want to build myself anyway in a way that makes sense.” <span class="review-quote-attribution">Lucideus, Unity Asset Store review</span></blockquote></section> <section class="asm-section"><h2>See Advanced Scene Manager 3 in Action</h2> `);
+	YouTube($$renderer, { id: "K0wFdUaBmbw" });
+	$$renderer.push(`<!----></section> <section class="asm-section"><h2>Key Features</h2> <div class="asm-features-grid"><!--[-->`);
 	const each_array_1 = ensure_array_like(features);
 	for (let $$index_1 = 0, $$length = each_array_1.length; $$index_1 < $$length; $$index_1++) {
 		let feature = each_array_1[$$index_1];

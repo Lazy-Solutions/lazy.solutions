@@ -1,4 +1,6 @@
 <script>
+  import YouTube from "../components/YouTube.svelte";
+
   const assetStoreUrl =
     "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926";
   const trialUrl =
@@ -38,6 +40,9 @@
       <img
         src="/media/images/web_asm_icon.webp"
         alt="Advanced Scene Manager 3 icon"
+        fetchpriority="high"
+        width="660"
+        height="200"
       />
     </div>
   </header>
@@ -153,15 +158,7 @@
 
   <section class="asm-section">
     <h2>See Advanced Scene Manager 3 in Action</h2>
-    <iframe
-      width="100%"
-      src="https://www.youtube.com/embed/K0wFdUaBmbw?rel=0&amp;modestbranding=1"
-      title="Advanced Scene Manager 3 Overview"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe>
+    <YouTube id="K0wFdUaBmbw" />
   </section>
 
   <section class="asm-section">
