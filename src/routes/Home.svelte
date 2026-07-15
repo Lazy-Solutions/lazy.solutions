@@ -94,9 +94,9 @@
           consistent workflows across production.
         </p>
         <div class="project-actions">
-          <a class="button primary" href="/advanced-scene-manager/">Product Page</a>
+          <a class="button primary" href="/advanced-scene-manager">Product Page</a>
           <a class="button tertiary" target="_blank" rel="noopener noreferrer" href={asmUrl}>Unity Asset Store</a>
-          <a class="button secondary" href="/showcase/advanced-scene-manager/">Showcase</a>
+          <a class="button secondary" href="/showcase/advanced-scene-manager">Showcase</a>
         </div>
       </div>
     </div>

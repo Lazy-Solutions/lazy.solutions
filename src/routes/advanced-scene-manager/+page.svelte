@@ -103,7 +103,7 @@
     content="A Unity scene manager that makes additive scene loading, custom loading screens, and multi-scene workflows more reliable."
   />
   <meta property="og:image" content="https://lazy.solutions/media/images/asm_feature.webp" />
-  <meta property="og:url" content="https://lazy.solutions/advanced-scene-manager/" />
+  <meta property="og:url" content="https://lazy.solutions/advanced-scene-manager" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Advanced Scene Manager 3 | Unity Scene Manager & Load Scene Workflow" />
