@@ -18,7 +18,7 @@
 
 <nav id="navigation" class:nav-open={navOpen} aria-label="Primary navigation">
   <a class="brand-mark" href={homeHref} aria-label="Lazy Solutions home" on:click={closeMenu}>
-    <img class="lazy_icon" src="/media/images/logo.svg" alt="Lazy Solutions Homepage" />
+    <img class="lazy_icon" src="/media/images/logo.svg" alt="Lazy Solutions Homepage" height="35" width="42" />
     <span class="brand-name">Lazy Solutions</span>
   </a>
 

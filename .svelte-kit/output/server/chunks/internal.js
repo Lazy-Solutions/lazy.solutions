@@ -1,5 +1,5 @@
 import "./internal2.js";
-import { A as get, B as set, F as create_text, G as push, H as boundary, I as get_first_child, J as hydrating, K as async_mode_flag, L as get_next_sibling, M as set_active_reaction, N as component_root, O as active_effect, P as clear_text_content, R as init_operations, S as getAbortSignal, T as is_passive_event, U as component_context, V as flushSync, W as pop, X as set_hydrating, Y as set_hydrate_node, Z as hydration_mismatch, _ as setContext, at as array_from, b as hydratable_serialization_failed, ct as run, et as HYDRATION_ERROR, f as get_render_context, g as hasContext, h as getContext, j as set_active_effect, k as active_reaction, m as getAllContexts, nt as experimental_async_required, o as render, ot as define_property, p as createContext, q as hydrate_node, r as derived, rt as LEGACY_PROPS, st as noop, tt as hydration_failed, v as ssr_context, x as lifecycle_function_unavailable, z as mutable_source } from "./server.js";
+import { $ as set_hydrate_node, B as get_first_child, E as getAbortSignal, F as set_active_effect, G as flushSync, H as init_operations, I as set_active_reaction, J as pop, K as boundary, L as component_root, M as active_effect, N as active_reaction, P as get, Q as hydrating, R as clear_text_content, S as ssr_context, T as lifecycle_function_unavailable, U as mutable_source, V as get_next_sibling, W as set, X as async_mode_flag, Y as push, Z as hydrate_node, _ as createContext, at as hydration_failed, b as hasContext, et as set_hydrating, ft as noop, g as get_render_context, i as derived, it as HYDRATION_ERROR, k as is_passive_event, lt as array_from, ot as experimental_async_required, pt as run, q as component_context, s as render, st as LEGACY_PROPS, tt as hydration_mismatch, ut as define_property, v as getAllContexts, w as hydratable_serialization_failed, x as setContext, y as getContext, z as create_text } from "./server.js";
 import * as devalue from "devalue";
 //#region \0rolldown/runtime.js
 var __defProp = Object.defineProperty;
@@ -710,10 +710,10 @@ var options = {
 	service_worker_options: void 0,
 	server_error_boundaries: false,
 	templates: {
-		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n    <link rel=\"icon\" href=\"/favicon.ico\" />\r\n    <script defer src=\"https://kit.fontawesome.com/f15145c18c.js\" crossorigin=\"anonymous\"><\/script>\r\n    " + head + "\r\n  </head>\r\n  <body data-sveltekit-preload-data=\"hover\">\r\n    <div style=\"display: contents\">" + body + "</div>\r\n  </body>\r\n</html>\r\n",
+		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n    <link rel=\"icon\" href=\"/favicon.ico\" />\r\n    " + head + "\r\n  </head>\r\n  <body data-sveltekit-preload-data=\"hover\">\r\n    <div style=\"display: contents\">" + body + "</div>\r\n  </body>\r\n</html>\r\n",
 		error: error_template_default
 	},
-	version_hash: "1asoadv"
+	version_hash: "1yzxkcy"
 };
 async function get_hooks() {
 	let handle;

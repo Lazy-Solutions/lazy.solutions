@@ -1,4 +1,4 @@
-import { a as head, d as html } from "../../../chunks/server.js";
+import { h as html, o as head } from "../../../chunks/server.js";
 //#region src/routes/Support.svelte
 function Support($$renderer) {
 	$$renderer.push(`<main class="support-page"><article id="support" class="support-card"><div class="support-content"><h1>Need Help?</h1> <h2>Chat with us on Discord</h2> <a href="https://discord.gg/8X5Gtgd">https://discord.gg/8X5Gtgd</a></div></article></main>`);

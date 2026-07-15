@@ -1,4 +1,4 @@
-import { C as attr, a as head, d as html, i as ensure_array_like, n as bind_props, w as escape_html } from "../../../chunks/server.js";
+import { D as attr, O as escape_html, a as ensure_array_like, h as html, o as head, r as bind_props } from "../../../chunks/server.js";
 //#region src/components/YouTube.svelte
 function YouTube($$renderer, $$props) {
 	let id = $$props["id"];
@@ -54,7 +54,7 @@ function Asm($$renderer) {
 	const each_array = ensure_array_like(Array(5));
 	for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
 		each_array[$$index];
-		$$renderer.push(`<img src="/media/images/star.webp" alt="Review star"/>`);
+		$$renderer.push(`<img src="/media/images/star.webp" alt="Review star" width="24" height="24"/>`);
 	}
 	$$renderer.push(`<!--]--></div> <blockquote class="review-quote">“I find myself importing this asset as a standard for my workflow now. It just saves me so much time and pain. ASM does pretty much what I'd want to build myself anyway in a way that makes sense.” <span class="review-quote-attribution">Lucideus, Unity Asset Store review</span></blockquote></section> <section class="asm-section"><h2>See Advanced Scene Manager 3 in Action</h2> `);
 	YouTube($$renderer, { id: "K0wFdUaBmbw" });

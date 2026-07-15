@@ -1,4 +1,4 @@
-import { C as attr, a as head, d as html, i as ensure_array_like, w as escape_html } from "../../chunks/server.js";
+import { D as attr, O as escape_html, a as ensure_array_like, h as html, o as head } from "../../chunks/server.js";
 //#region src/routes/Home.svelte
 function Home($$renderer) {
 	const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/publishers/48996";

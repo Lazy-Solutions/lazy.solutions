@@ -1,4 +1,4 @@
-import { d as get_message, f as get_status, u as coalesce_to_error } from "./shared.js";
+import { _ as noop, d as get_message, f as get_status, u as coalesce_to_error } from "./shared.js";
 import { json, text } from "@sveltejs/kit";
 import { HttpError, SvelteKitError } from "@sveltejs/kit/internal";
 import { with_request_store } from "@sveltejs/kit/internal/server";
@@ -52,6 +52,8 @@ function set_nested_value(object, path_string, value) {
 	}
 	deep_set(object, split_path(path_string), value);
 }
+/** Pass this to set_nested_value to delete the last part of the given path */
+var DELETE_KEY = {};
 /**
 * Convert `FormData` into a POJO
 * @param {FormData} data
@@ -198,7 +200,7 @@ async function deserialize_binary_form(request) {
 	(async () => {
 		let has_more = true;
 		while (has_more) has_more = !!await get_chunk(chunks.length);
-	})();
+	})().catch(noop);
 	return {
 		data,
 		meta,
@@ -336,12 +338,16 @@ function deep_set(object, keys, value) {
 		const inner = Object.hasOwn(current, key) ? current[key] : void 0;
 		const exists = inner != null;
 		if (exists && is_array !== Array.isArray(inner)) throw new Error(`Invalid array key ${keys[i + 1]}`);
-		if (!exists) current[key] = is_array ? [] : {};
+		if (!exists) {
+			if (value === DELETE_KEY) return;
+			current[key] = is_array ? [] : {};
+		}
 		current = current[key];
 	}
 	const final_key = keys[keys.length - 1];
 	check_prototype_pollution(final_key);
-	current[final_key] = value;
+	if (value === DELETE_KEY) delete current[final_key];
+	else current[final_key] = value;
 }
 /**
 * @param {StandardSchemaV1.Issue} issue
@@ -463,10 +469,11 @@ function create_field_proxy(target, get_input, set_input, get_issues, path = [])
 					path: issue.path,
 					message: issue.message
 				}));
-				return all_issues?.filter((issue) => issue.name === key)?.map((issue) => ({
+				const issues = all_issues?.filter((issue) => issue.name === key)?.map((issue) => ({
 					path: issue.path,
 					message: issue.message
 				}));
+				return issues?.length ? issues : void 0;
 			};
 			return create_field_proxy(issues_func, get_input, set_input, get_issues, [...path, prop]);
 		}

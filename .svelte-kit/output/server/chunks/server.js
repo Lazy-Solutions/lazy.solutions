@@ -39,6 +39,16 @@ function deferred() {
 		reject
 	};
 }
+/**
+* @template V
+* @param {V} value
+* @param {V | (() => V)} fallback
+* @param {boolean} [lazy]
+* @returns {V}
+*/
+function fallback(value, fallback, lazy = false) {
+	return value === void 0 ? lazy ? fallback() : fallback : value;
+}
 //#endregion
 //#region node_modules/svelte/src/internal/client/reactivity/equality.js
 /** @import { Equals } from '#client' */
@@ -4060,6 +4070,25 @@ function attributes(attrs, css_hash, classes, styles, flags = 0) {
 	return attr_str;
 }
 /**
+* @param {Record<string, unknown>[]} props
+* @returns {Record<string, unknown>}
+*/
+function spread_props(props) {
+	/** @type {Record<string, unknown>} */
+	const merged_props = {};
+	let key;
+	for (let i = 0; i < props.length; i++) {
+		const obj = props[i];
+		if (obj == null) continue;
+		for (key of Object.keys(obj)) {
+			const desc = Object.getOwnPropertyDescriptor(obj, key);
+			if (desc) Object.defineProperty(merged_props, key, desc);
+			else merged_props[key] = obj[key];
+		}
+	}
+	return merged_props;
+}
+/**
 * @param {any} value
 * @param {string | undefined} [hash]
 * @param {Record<string, boolean>} [directives]
@@ -4110,6 +4139,26 @@ function slot(renderer, $$props, name, slot_props, fallback_fn) {
 	else fallback_fn?.();
 }
 /**
+* @param {Record<string, unknown>} props
+* @param {string[]} rest
+* @returns {Record<string, unknown>}
+*/
+function rest_props(props, rest) {
+	/** @type {Record<string, unknown>} */
+	const rest_props = {};
+	let key;
+	for (key of Object.keys(props)) if (!rest.includes(key)) rest_props[key] = props[key];
+	return rest_props;
+}
+/**
+* @param {Record<string, unknown>} props
+* @returns {Record<string, unknown>}
+*/
+function sanitize_props(props) {
+	const { children, $$slots, ...sanitized } = props;
+	return sanitized;
+}
+/**
 * Legacy mode: If the prop has a fallback and is bound in the
 * parent component, propagate the fallback value upwards.
 * @param {Record<string, unknown>} props_parent
@@ -4154,4 +4203,4 @@ function derived(fn) {
 	};
 }
 //#endregion
-export { state_proxy_unmount as $, get as A, set as B, attr as C, writable as D, readable as E, create_text as F, push$1 as G, boundary as H, get_first_child as I, hydrating as J, async_mode_flag as K, get_next_sibling as L, set_active_reaction as M, component_root as N, active_effect as O, clear_text_content as P, lifecycle_double_unmount as Q, init_operations as R, getAbortSignal as S, is_passive_event as T, component_context as U, flushSync as V, pop$1 as W, set_hydrating as X, set_hydrate_node as Y, hydration_mismatch as Z, setContext as _, head as a, array_from as at, hydratable_serialization_failed as b, store_get as c, run as ct, html as d, HYDRATION_ERROR as et, get_render_context as f, hasContext as g, getContext as h, ensure_array_like as i, STATE_SYMBOL as it, set_active_effect as j, active_reaction as k, unsubscribe_stores as l, getAllContexts as m, bind_props as n, experimental_async_required as nt, render as o, define_property as ot, createContext as p, hydrate_node as q, derived as r, LEGACY_PROPS as rt, slot as s, noop as st, attr_class as t, hydration_failed as tt, get_user_code_location as u, ssr_context as v, escape_html as w, lifecycle_function_unavailable as x, hydratable_clobbering as y, mutable_source as z };
+export { set_hydrate_node as $, readable as A, get_first_child as B, hydratable_clobbering as C, attr as D, getAbortSignal as E, set_active_effect as F, flushSync as G, init_operations as H, set_active_reaction as I, pop$1 as J, boundary as K, component_root as L, active_effect as M, active_reaction as N, escape_html as O, get as P, hydrating as Q, clear_text_content as R, ssr_context as S, lifecycle_function_unavailable as T, mutable_source as U, get_next_sibling as V, set as W, async_mode_flag as X, push$1 as Y, hydrate_node as Z, createContext as _, ensure_array_like as a, hydration_failed as at, hasContext as b, rest_props as c, STATE_SYMBOL as ct, spread_props as d, fallback as dt, set_hydrating as et, store_get as f, noop as ft, get_render_context as g, html as h, derived as i, HYDRATION_ERROR as it, writable as j, is_passive_event as k, sanitize_props as l, array_from as lt, get_user_code_location as m, attributes as n, lifecycle_double_unmount as nt, head as o, experimental_async_required as ot, unsubscribe_stores as p, run as pt, component_context as q, bind_props as r, state_proxy_unmount as rt, render as s, LEGACY_PROPS as st, attr_class as t, hydration_mismatch as tt, slot as u, define_property as ut, getAllContexts as v, hydratable_serialization_failed as w, setContext as x, getContext as y, create_text as z };

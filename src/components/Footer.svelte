@@ -1,33 +1,48 @@
+<script>
+  import { FontAwesomeIcon } from "@fortawesome/svelte-fontawesome";
+  import {
+    faDiscord,
+    faYoutube,
+    faXTwitter,
+  } from "@fortawesome/free-brands-svg-icons";
+</script>
+
 <footer id="navbar-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <p>Professional Unity assets and production workflow tools from Sweden.</p>
+      <p>Professional Unity assets and production tools from Sweden.</p>
     </div>
 
     <div class="footer-links">
       <h2>Social</h2>
+
       <nav class="social-media" aria-label="Social links">
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://discord.com/invite/ayE4EHB6bQ"
-          class="fab fa-discord"
           aria-label="Discord"
-        ></a>
+        >
+          <FontAwesomeIcon icon={faDiscord} />
+        </a>
+
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.youtube.com/@lazysolutions"
-          class="fab fa-youtube"
           aria-label="YouTube"
-        ></a>
+        >
+          <FontAwesomeIcon icon={faYoutube} />
+        </a>
+
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://twitter.com/Lazy_Solutions"
-          class="fab fa-x-twitter"
           aria-label="X"
-        ></a>
+        >
+          <FontAwesomeIcon icon={faXTwitter} />
+        </a>
       </nav>
     </div>
 

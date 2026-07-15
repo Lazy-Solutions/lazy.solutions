@@ -1,4 +1,5 @@
 @import '../css/style.scss';
+
 @font-face {
     font-family: "Manrope";
     src: url("/fonts/Manrope.woff2") format("woff2");

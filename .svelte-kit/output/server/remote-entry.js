@@ -379,6 +379,7 @@ function form(validate_or_fn, maybe_fn) {
 			}
 		} });
 		Object.defineProperty(instance, "pending", { get: () => 0 });
+		Object.defineProperty(instance, "submitted", { get: () => false });
 		Object.defineProperty(instance, "preflight", { value: () => instance });
 		Object.defineProperty(instance, "validate", { value: () => {
 			throw new Error("Cannot call validate() on the server");

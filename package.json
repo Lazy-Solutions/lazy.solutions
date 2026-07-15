@@ -10,10 +10,15 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.68.0",
+    "@sveltejs/kit": "^2.69.3",
     "@sveltejs/vite-plugin-svelte": "latest",
     "sass-embedded": "^1.100.0",
     "svelte": "latest",
     "vite": "latest"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^7.3.0",
+    "@fortawesome/free-solid-svg-icons": "^7.3.0",
+    "@fortawesome/svelte-fontawesome": "^0.2.4"
   }
 }
