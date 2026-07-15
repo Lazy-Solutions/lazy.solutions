@@ -45,7 +45,7 @@ function Asm($$renderer) {
 	const each_array = ensure_array_like(Array(5));
 	for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
 		each_array[$$index];
-		$$renderer.push(`<img src="/media/images/star.webp" alt=""/>`);
+		$$renderer.push(`<img src="/media/images/star.webp" alt="Review star"/>`);
 	}
 	$$renderer.push(`<!--]--></div> <blockquote class="review-quote">“I find myself importing this asset as a standard for my workflow now. It just saves me so much time and pain. ASM does pretty much what I'd want to build myself anyway in a way that makes sense.” <span class="review-quote-attribution">Lucideus, Unity Asset Store review</span></blockquote></section> <section class="asm-section"><h2>See Advanced Scene Manager 3 in Action</h2> <iframe width="100%" src="https://www.youtube.com/embed/K0wFdUaBmbw?rel=0&amp;modestbranding=1" title="Advanced Scene Manager 3 Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></section> <section class="asm-section"><h2>Key Features</h2> <div class="asm-features-grid"><!--[-->`);
 	const each_array_1 = ensure_array_like(features);

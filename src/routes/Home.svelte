@@ -47,7 +47,7 @@
 
 <header class="hero">
   <div class="LogoWrapper" aria-hidden="true">
-    <img class="header-background" src="/media/images/bg.webp" alt="" />
+    <img class="header-background" src="/media/images/bg.webp" alt="Background" />
   </div>
 
   <section class="hero-content" aria-labelledby="hero-title">

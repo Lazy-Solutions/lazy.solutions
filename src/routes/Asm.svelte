@@ -142,7 +142,7 @@
   <section class="asm-section">
     <div class="review-stars" aria-label="Five star review">
       {#each Array(5) as _}
-        <img src="/media/images/star.webp" alt="" />
+        <img src="/media/images/star.webp" alt="Review star" />
       {/each}
     </div>
     <blockquote class="review-quote">
