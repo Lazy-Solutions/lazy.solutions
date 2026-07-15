@@ -7,14 +7,14 @@
       {
         '@type': 'SoftwareApplication',
         'name': 'Advanced Scene Manager 3',
-        'url': 'https://lazy.solutions/advanced-scene-manager/',
+        'url': 'https://lazy.solutions/advanced-scene-manager',
         'description': 'Advanced Scene Manager 3 is a professional Unity scene management asset for additive scene loading, loading screens, and multi-scene workflows.',
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'Unity',
         'publisher': {
           '@type': 'Organization',
           'name': 'Lazy Solutions',
-          'url': 'https://lazy.solutions/'
+          'url': 'https://lazy.solutions'
         },
         'softwareVersion': '3'
       },
@@ -25,13 +25,13 @@
             '@type': 'ListItem',
             'position': 1,
             'name': 'Home',
-            'item': 'https://lazy.solutions/'
+            'item': 'https://lazy.solutions'
           },
           {
             '@type': 'ListItem',
             'position': 2,
             'name': 'Advanced Scene Manager',
-            'item': 'https://lazy.solutions/advanced-scene-manager/'
+            'item': 'https://lazy.solutions/advanced-scene-manager'
           }
         ]
       },
