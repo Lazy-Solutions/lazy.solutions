@@ -62,7 +62,7 @@
         href={assetStoreUrl}
         class="buy-btn"
         target="_blank"
-        rel="noopener noreferrer">Get It on the Asset Store</a
+        rel="noopener noreferrer sponsored">Get It on the Asset Store</a
       >
       <a
         href={trialUrl}
@@ -218,7 +218,7 @@ public class SceneLoader : MonoBehaviour
         href={assetStoreUrl}
         class="buy-btn"
         target="_blank"
-        rel="noopener noreferrer">Buy on Unity Asset Store</a
+        rel="noopener noreferrer sponsored">Buy on Unity Asset Store</a
       >
     </div>
     <p class="support asm-cta-support">

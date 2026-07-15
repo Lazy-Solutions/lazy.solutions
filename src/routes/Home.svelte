@@ -59,7 +59,7 @@
     </p>
     <div class="hero-actions">
       <a class="button primary" href="#Projects">View Featured Asset</a>
-      <a class="button secondary" target="_blank" rel="noopener noreferrer" href={publisherUrl}>Asset Store</a>
+      <a class="button secondary" target="_blank" rel="noopener noreferrer sponsored" href={publisherUrl}>Asset Store</a>
     </div>
   </section>
 </header>
@@ -67,7 +67,7 @@
 <main>
   <section id="Store" class="store-strip" aria-label="Store links">
     <p>Browse all published tools on the Unity Asset Store</p>
-    <a class="store-button" target="_blank" rel="noopener noreferrer" href={publisherUrl}>Publisher Page</a>
+    <a class="store-button" target="_blank" rel="noopener noreferrer sponsored" href={publisherUrl}>Publisher Page</a>
   </section>
 
   <section id="Projects" class="projects-section" aria-labelledby="projects-title">
@@ -95,7 +95,7 @@
         </p>
         <div class="project-actions">
           <a class="button primary" href="/advanced-scene-manager">Product Page</a>
-          <a class="button tertiary" target="_blank" rel="noopener noreferrer" href={asmUrl}>Unity Asset Store</a>
+          <a class="button tertiary" target="_blank" rel="noopener noreferrer sponsored" href={asmUrl}>Unity Asset Store</a>
           <a class="button secondary" href="/showcase/advanced-scene-manager">Showcase</a>
         </div>
       </div>
@@ -118,7 +118,7 @@
           <span class="asset-status">{asset.status}</span>
           <h3>{asset.title}</h3>
           <p>{asset.body}</p>
-          <a class="button secondary" target="_blank" rel="noopener noreferrer" href={asset.href}>Unity Asset Store</a>
+          <a class="button secondary" target="_blank" rel="noopener noreferrer sponsored" href={asset.href}>Unity Asset Store</a>
         </article>
       {/each}
     </div>
