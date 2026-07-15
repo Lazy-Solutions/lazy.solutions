@@ -2,8 +2,8 @@
   const projects = [
     {
       title: 'Seneca 7: A Cyberpunk Odyssey',
-      href: 'https://store.steampowered.com/app/1901860/Seneca_7_A_Cyberpunk_Odyssey/',
-      image: '/media/images/showcase/Seneca7_CoverPhoto_1920x1080.jpg',
+      href: 'https://store.steampowered.com/app/1901860/Seneca_7_A_Cyberpunk_Odyssey',
+      image: '/media/images/showcase/Seneca7_CoverPhoto.webp',
       alt: 'Seneca 7',
       copyright: '"Seneca 7: A Cyberpunk Odyssey" © The Seneca Project 2022-2023',
       description:
@@ -14,8 +14,8 @@
     },
     {
       title: "Paladin's Oath",
-      href: 'https://store.steampowered.com/app/1671590/Paladins_Oath/',
-      image: '/media/images/showcase/paladinsoath.png',
+      href: 'https://store.steampowered.com/app/1671590/Paladins_Oath',
+      image: '/media/images/showcase/paladinsoath.webp',
       alt: "Paladin's Oath",
       copyright: '"Paladin\'s Oath" © Fire Biscuit Gaming',
       description:

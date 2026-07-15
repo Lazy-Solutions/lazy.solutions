@@ -62,19 +62,19 @@ function _page($$renderer) {
 		"@graph": [
 			{
 				"@type": "WebSite",
-				"url": "https://lazy.solutions/",
+				"url": "https://lazy.solutions",
 				"name": "Lazy Solutions",
 				"description": "Professional Unity assets for scene management, workflow automation, and production-ready project structure.",
 				"publisher": {
 					"@type": "Organization",
 					"name": "Lazy Solutions",
-					"url": "https://lazy.solutions/"
+					"url": "https://lazy.solutions"
 				}
 			},
 			{
 				"@type": "Organization",
 				"name": "Lazy Solutions",
-				"url": "https://lazy.solutions/",
+				"url": "https://lazy.solutions",
 				"logo": {
 					"@type": "ImageObject",
 					"url": "https://lazy.solutions/media/images/asm_feature.webp"
@@ -86,7 +86,7 @@ function _page($$renderer) {
 					"@type": "ListItem",
 					"position": 1,
 					"name": "Home",
-					"item": "https://lazy.solutions/"
+					"item": "https://lazy.solutions"
 				}]
 			}
 		]

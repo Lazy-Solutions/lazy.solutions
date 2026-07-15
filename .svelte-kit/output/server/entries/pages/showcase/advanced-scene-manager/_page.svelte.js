@@ -3,8 +3,8 @@ import { C as escape_html, S as attr, i as head, r as ensure_array_like, u as ht
 function ShowcaseAsm($$renderer) {
 	const projects = [{
 		title: "Seneca 7: A Cyberpunk Odyssey",
-		href: "https://store.steampowered.com/app/1901860/Seneca_7_A_Cyberpunk_Odyssey/",
-		image: "/media/images/showcase/Seneca7_CoverPhoto_1920x1080.jpg",
+		href: "https://store.steampowered.com/app/1901860/Seneca_7_A_Cyberpunk_Odyssey",
+		image: "/media/images/showcase/Seneca7_CoverPhoto.webp",
 		alt: "Seneca 7",
 		copyright: "\"Seneca 7: A Cyberpunk Odyssey\" © The Seneca Project 2022-2023",
 		description: "Build a new life in a cozy cyberpunk adventure RPG! Polluted air having you gasping for breath? Drowning in endless debt? Online dating getting you nowhere? Leave your worries behind and reboot your life on Seneca 7, where dreams come true!*",
@@ -12,8 +12,8 @@ function ShowcaseAsm($$renderer) {
 		quote: "ASM has a lot of great features built-in, including loading screens, pause screens, and profiles. Creating scene collections that have persistent objects with the ability to toggle the opening and closing of collections from a single Scene Helper asset made organizing and optimizing our project that much easier!"
 	}, {
 		title: "Paladin's Oath",
-		href: "https://store.steampowered.com/app/1671590/Paladins_Oath/",
-		image: "/media/images/showcase/paladinsoath.png",
+		href: "https://store.steampowered.com/app/1671590/Paladins_Oath",
+		image: "/media/images/showcase/paladinsoath.webp",
 		alt: "Paladin's Oath",
 		copyright: "\"Paladin's Oath\" © Fire Biscuit Gaming",
 		description: "Complex Strategy Fantasy card game RPG inspired by board games like Mage Knight or Gloomhaven. Combines elements of RPG, light deck-building, puzzle and strategy.",
