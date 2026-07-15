@@ -3,7 +3,7 @@ import { D as attr, O as escape_html, a as ensure_array_like, h as html, o as he
 function YouTube($$renderer, $$props) {
 	let id = $$props["id"];
 	$$renderer.push("<!--[-1-->");
-	$$renderer.push(`<button class="youtube-preview" aria-label="Play video"><img${attr("src", `https://img.youtube.com/vi/${id}/maxresdefault.jpg`)} alt="Video preview"/></button>`);
+	$$renderer.push(`<button class="youtube-preview" aria-label="Play video"><img${attr("src", `https://img.youtube.com/vi/${id}/sddefault.jpg`)} alt="Video preview"/></button>`);
 	$$renderer.push(`<!--]-->`);
 	bind_props($$props, { id });
 }

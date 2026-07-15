@@ -15,6 +15,6 @@
 ></iframe>
 {:else}
 <button class="youtube-preview" aria-label="Play video" on:click={() => loaded = true}>
-    <img src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt="Video preview">
+    <img src={`https://img.youtube.com/vi/${id}/sddefault.jpg`} alt="Video preview">
 </button>
 {/if}
