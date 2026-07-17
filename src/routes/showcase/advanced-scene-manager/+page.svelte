@@ -1,5 +1,5 @@
 <script>
-  import ShowcaseAsm from '../../ShowcaseAsm.svelte';
+  import ShowcaseAsm from './ShowcaseAsm.svelte';
 
   const schema = {
     '@context': 'https://schema.org',

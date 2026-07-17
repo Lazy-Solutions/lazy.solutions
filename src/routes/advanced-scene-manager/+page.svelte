@@ -1,5 +1,5 @@
 <script>
-  import Asm from '../Asm.svelte';
+  import Asm from './Asm.svelte';
 
   const schema = {
     '@context': 'https://schema.org',

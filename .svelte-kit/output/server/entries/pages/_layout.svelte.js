@@ -1,7 +1,8 @@
 import "../../chunks/internal.js";
-import { D as attr, c as rest_props, d as spread_props, dt as fallback, f as store_get, h as html, l as sanitize_props, n as attributes, p as unsubscribe_stores, r as bind_props, t as attr_class, u as slot, y as getContext } from "../../chunks/server.js";
+import { O as attr, b as getContext, d as slot, f as spread_props, ft as fallback, g as html, i as bind_props, l as rest_props, m as unsubscribe_stores, p as store_get, r as attributes, t as attr_class, u as sanitize_props } from "../../chunks/server.js";
 import "../../chunks/client.js";
-import { icon, parse } from "@fortawesome/fontawesome-svg-core";
+import { config, icon, parse } from "@fortawesome/fontawesome-svg-core";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faDiscord, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 //#region node_modules/@sveltejs/kit/src/runtime/app/stores.js
 /**
@@ -32,13 +33,6 @@ var getStores = () => {
 var page = { subscribe(fn) {
 	return getStores().page.subscribe(fn);
 } };
-//#endregion
-//#region src/components/Navigation.svelte
-function Navigation($$renderer) {
-	const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/publishers/48996";
-	let navOpen = false;
-	$$renderer.push(`<nav id="navigation" aria-label="Primary navigation"${attr_class("", void 0, { "nav-open": navOpen })}><a class="brand-mark"${attr("href", "/")} aria-label="Lazy Solutions home"><img class="lazy_icon" src="/media/images/logo.svg" alt="Lazy Solutions Homepage" height="35" width="42"/> <span class="brand-name">Lazy Solutions</span></a> <button class="menu-toggle" aria-label="Toggle menu"${attr("aria-expanded", navOpen)}><i class="fas fa-bars"></i></button> <div class="nav-links"><a href="/#Projects">Projects</a> <a href="/#About">About Us</a> <a href="/#navbar-footer">Social</a> <a target="_blank" rel="noopener noreferrer sponsored"${attr("href", publisherUrl)}>Asset Store</a> <a href="/support">Support</a></div></nav>`);
-}
 //#endregion
 //#region node_modules/@fortawesome/svelte-fontawesome/src/utils/get-class-list-from-props.js
 function classList(props) {
@@ -307,6 +301,15 @@ function FontAwesomeIcon($$renderer, $$props) {
 	});
 }
 //#endregion
+//#region src/components/Navigation.svelte
+function Navigation($$renderer) {
+	const publisherUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/publishers/48996";
+	let navOpen = false;
+	$$renderer.push(`<nav id="navigation" aria-label="Primary navigation"${attr_class("", void 0, { "nav-open": navOpen })}><a class="brand-mark"${attr("href", "/")} aria-label="Lazy Solutions home"><img class="lazy_icon" src="/media/images/logo.svg" alt="Lazy Solutions Homepage" height="35" width="42"/> <span class="brand-name">Lazy Solutions</span></a> <button class="menu-toggle" aria-label="Toggle menu"${attr("aria-expanded", navOpen)}>`);
+	FontAwesomeIcon($$renderer, { icon: faBars });
+	$$renderer.push(`<!----></button> <div class="nav-links"><a href="/#Projects">Projects</a> <a href="/blog">Blog</a> <a href="/#About">About Us</a> <a href="/#navbar-footer">Social</a> <a target="_blank" rel="noopener noreferrer sponsored"${attr("href", publisherUrl)}>Asset Store</a> <a href="/support">Support</a></div></nav>`);
+}
+//#endregion
 //#region src/components/Footer.svelte
 function Footer($$renderer) {
 	$$renderer.push(`<footer id="navbar-footer"><div class="footer-inner"><div class="footer-brand"><p>Professional Unity assets and production tools from Sweden.</p></div> <div class="footer-links"><h2>Social</h2> <nav class="social-media" aria-label="Social links"><a target="_blank" rel="noopener noreferrer" href="https://discord.com/invite/ayE4EHB6bQ" aria-label="Discord">`);
@@ -322,6 +325,9 @@ function Footer($$renderer) {
 function _layout($$renderer, $$props) {
 	$$renderer.component(($$renderer) => {
 		var $$store_subs;
+		config.autoAddCss = false;
+		config.keepOriginalSource = false;
+		config.showMissingIcons = false;
 		$: store_get($$store_subs ??= {}, "$page", page).url.pathname;
 		Navigation($$renderer, {});
 		$$renderer.push(`<!----> <!--[-->`);

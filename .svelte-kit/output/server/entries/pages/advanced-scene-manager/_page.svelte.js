@@ -1,4 +1,4 @@
-import { D as attr, O as escape_html, a as ensure_array_like, h as html, o as head, r as bind_props } from "../../../chunks/server.js";
+import { O as attr, g as html, i as bind_props, k as escape_html, o as ensure_array_like, s as head } from "../../../chunks/server.js";
 //#region src/components/YouTube.svelte
 function YouTube($$renderer, $$props) {
 	let id = $$props["id"];
@@ -8,7 +8,7 @@ function YouTube($$renderer, $$props) {
 	bind_props($$props, { id });
 }
 //#endregion
-//#region src/routes/Asm.svelte
+//#region src/routes/advanced-scene-manager/Asm.svelte
 function Asm($$renderer) {
 	const assetStoreUrl = "https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/packages/tools/utilities/advanced-scene-manager-3-330926";
 	const trialUrl = "https://github.com/Lazy-Solutions/AdvancedSceneManager/tree/main/trial";

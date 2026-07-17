@@ -37,6 +37,13 @@ img {
   max-width: 100%;
 }
 
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+
 .eyebrow,
 .section-kicker {
   width: -moz-max-content;
@@ -1049,13 +1056,285 @@ footer p {
     margin-top: 120px;
   }
 }
+.blog-section {
+  padding: 120px 20px;
+  background: transparent;
+}
+
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.blog-container h1 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.75rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.blog-highlight {
+  max-width: 800px;
+  margin: 0 auto 80px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.blog-highlight-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 450px;
+  position: relative;
+  text-decoration: none;
+}
+.blog-highlight-link:hover .blog-highlight-image img {
+  transform: scale(1.05);
+}
+
+.blog-highlight-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.blog-highlight-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-highlight-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(to top, rgba(16, 23, 25, 0.95) 0%, rgba(16, 23, 25, 0.7) 50%, transparent 100%);
+  padding: 120px 40px 40px;
+}
+.blog-highlight-content time {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #69b6ab;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.blog-highlight-content h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #edf3f1;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.blog-highlight-content p {
+  color: #aebcbd;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.blog-list-classic {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-post-classic {
+  border-bottom: 1px solid rgba(237, 243, 241, 0.5);
+}
+.blog-post-classic:last-child {
+  border-bottom: none;
+}
+
+.blog-post-link-classic {
+  display: block;
+  padding: 40px 0;
+  transition: opacity 0.2s ease;
+}
+.blog-post-link-classic:hover {
+  opacity: 0.8;
+}
+.blog-post-link-classic:hover h2, .blog-post-link-classic:hover h3 {
+  color: #E09D36;
+}
+.blog-post-link-classic time {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8fb0b5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.blog-post-link-classic h2, .blog-post-link-classic h3 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #edf3f1;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+.blog-post-link-classic p {
+  color: #aebcbd;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.blog-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 800px;
+  margin: 48px auto 0;
+}
+.blog-pagination button, .blog-pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(237, 243, 241, 0.05);
+  color: #edf3f1;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid rgba(237, 243, 241, 0.16);
+  transition: all 0.2s ease;
+}
+.blog-pagination button:hover, .blog-pagination a:hover {
+  background: rgba(237, 243, 241, 0.1);
+  transform: translateY(-2px);
+}
+.blog-pagination button.active, .blog-pagination a.active {
+  background: linear-gradient(135deg, #E09D36, #ffd983);
+  color: #101719;
+  border-color: transparent;
+}
+.blog-pagination button:disabled, .blog-pagination a:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.blog-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+}
+
+.article-header {
+  margin-bottom: 64px;
+}
+.article-header h1 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #edf3f1;
+}
+.article-header time {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #69b6ab;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.article-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #aebcbd;
+}
+.article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #edf3f1;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.article-content h2 {
+  font-size: 1.75rem;
+}
+.article-content h3 {
+  font-size: 1.45rem;
+}
+.article-content p {
+  margin-bottom: 24px;
+}
+.article-content a {
+  color: #E09D36;
+  text-decoration: underline;
+  text-decoration-color: rgba(224, 157, 54, 0.4);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+.article-content a:hover {
+  text-decoration-color: #E09D36;
+}
+.article-content ul, .article-content ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+.article-content ul li, .article-content ol li {
+  margin-bottom: 8px;
+}
+.article-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+.article-content blockquote {
+  margin: 40px 0;
+  padding: 24px 32px;
+  border-left: 4px solid #69b6ab;
+  background: rgba(29, 48, 51, 0.5);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: #edf3f1;
+}
+.article-content blockquote p {
+  margin-bottom: 0;
+}
+.article-content pre {
+  background: #101719;
+  padding: 24px;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin-bottom: 24px;
+  border: 1px solid rgba(237, 243, 241, 0.16);
+}
+.article-content pre code {
+  color: #edf3f1;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+.article-content code {
+  font-family: monospace;
+  background: rgba(16, 23, 25, 0.5);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #315f5f;
+}
+
 @media screen and (max-width: 900px) {
   #navigation {
     align-items: flex-start;
     border-radius: 28px;
   }
   #navigation .nav-links {
-    max-width: 520px;
+    max-width: 650px;
   }
   .project-card,
   .assets-section .asset-grid {

@@ -1,6 +1,24 @@
 {
 	"compilerOptions": {
 		"paths": {
+			"$components": [
+				"../src/components"
+			],
+			"$components/*": [
+				"../src/components/*"
+			],
+			"$blog": [
+				"../src/blog"
+			],
+			"$blog/*": [
+				"../src/blog/*"
+			],
+			"$lib": [
+				"../src/lib"
+			],
+			"$lib/*": [
+				"../src/lib/*"
+			],
 			"$app/types": [
 				"./types/index.d.ts"
 			]

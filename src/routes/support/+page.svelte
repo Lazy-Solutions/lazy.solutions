@@ -1,5 +1,5 @@
 <script>
-  import Support from '../Support.svelte';
+  import Support from './Support.svelte';
 
   const schema = {
     '@context': 'https://schema.org',

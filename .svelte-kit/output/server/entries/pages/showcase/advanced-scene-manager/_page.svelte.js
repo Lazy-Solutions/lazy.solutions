@@ -1,5 +1,5 @@
-import { D as attr, O as escape_html, a as ensure_array_like, h as html, o as head } from "../../../../chunks/server.js";
-//#region src/routes/ShowcaseAsm.svelte
+import { O as attr, g as html, k as escape_html, o as ensure_array_like, s as head } from "../../../../chunks/server.js";
+//#region src/routes/showcase/advanced-scene-manager/ShowcaseAsm.svelte
 function ShowcaseAsm($$renderer) {
 	const projects = [{
 		title: "Seneca 7: A Cyberpunk Odyssey",

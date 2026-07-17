@@ -1,4 +1,8 @@
 <script>
+  import { FontAwesomeIcon } from "@fortawesome/svelte-fontawesome";
+  
+  import { faBars } from "@fortawesome/free-solid-svg-icons";
+
   const publisherUrl =
     'https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/publishers/48996';
 
@@ -23,11 +27,12 @@
   </a>
 
   <button class="menu-toggle" aria-label="Toggle menu" aria-expanded={navOpen} on:click={toggleMenu}>
-    <i class="fas fa-bars"></i>
+    <FontAwesomeIcon icon={faBars} />
   </button>
 
   <div class="nav-links">
     <a href="/#Projects" on:click={closeMenu}>Projects</a>
+    <a href="/blog" on:click={closeMenu}>Blog</a>
     <a href="/#About" on:click={closeMenu}>About Us</a>
     <a href="/#navbar-footer" on:click={closeMenu}>Social</a>
     <a target="_blank" rel="noopener noreferrer sponsored" href={publisherUrl} on:click={closeMenu}>Asset Store</a>

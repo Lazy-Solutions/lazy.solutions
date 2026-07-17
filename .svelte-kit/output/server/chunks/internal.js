@@ -1,5 +1,5 @@
 import "./internal2.js";
-import { $ as set_hydrate_node, B as get_first_child, E as getAbortSignal, F as set_active_effect, G as flushSync, H as init_operations, I as set_active_reaction, J as pop, K as boundary, L as component_root, M as active_effect, N as active_reaction, P as get, Q as hydrating, R as clear_text_content, S as ssr_context, T as lifecycle_function_unavailable, U as mutable_source, V as get_next_sibling, W as set, X as async_mode_flag, Y as push, Z as hydrate_node, _ as createContext, at as hydration_failed, b as hasContext, et as set_hydrating, ft as noop, g as get_render_context, i as derived, it as HYDRATION_ERROR, k as is_passive_event, lt as array_from, ot as experimental_async_required, pt as run, q as component_context, s as render, st as LEGACY_PROPS, tt as hydration_mismatch, ut as define_property, v as getAllContexts, w as hydratable_serialization_failed, x as setContext, y as getContext, z as create_text } from "./server.js";
+import { $ as hydrating, A as is_passive_event, B as create_text, C as ssr_context, D as getAbortSignal, E as lifecycle_function_unavailable, F as get, G as set, H as get_next_sibling, I as set_active_effect, J as component_context, K as flushSync, L as set_active_reaction, N as active_effect, P as active_reaction, Q as hydrate_node, R as component_root, S as setContext, T as hydratable_serialization_failed, U as init_operations, V as get_first_child, W as mutable_source, X as push, Y as pop, Z as async_mode_flag, _ as get_render_context, a as derived, at as HYDRATION_ERROR, b as getContext, c as render, ct as LEGACY_PROPS, dt as define_property, et as set_hydrate_node, mt as run, nt as hydration_mismatch, ot as hydration_failed, pt as noop, q as boundary, st as experimental_async_required, tt as set_hydrating, ut as array_from, v as createContext, x as hasContext, y as getAllContexts, z as clear_text_content } from "./server.js";
 import * as devalue from "devalue";
 //#region \0rolldown/runtime.js
 var __defProp = Object.defineProperty;
@@ -710,10 +710,10 @@ var options = {
 	service_worker_options: void 0,
 	server_error_boundaries: false,
 	templates: {
-		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n    <link rel=\"icon\" href=\"/favicon.ico\" />\r\n    " + head + "\r\n  </head>\r\n  <body data-sveltekit-preload-data=\"hover\">\r\n    <div style=\"display: contents\">" + body + "</div>\r\n  </body>\r\n</html>\r\n",
+		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n    <link rel=\"icon\" href=\"/favicon.png\" type=\"image/png\" />\r\n    " + head + "\r\n  </head>\r\n  <body data-sveltekit-preload-data=\"hover\">\r\n    <div style=\"display: contents\">" + body + "</div>\r\n  </body>\r\n</html>\r\n",
 		error: error_template_default
 	},
-	version_hash: "1e7myhd"
+	version_hash: "xe5mhe"
 };
 async function get_hooks() {
 	let handle;

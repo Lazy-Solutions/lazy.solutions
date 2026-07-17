@@ -14,7 +14,11 @@ const config = {
     }),
     files: {
       assets: 'public'
-    }
+    },
+    alias: {
+			$components: 'src/components',
+      $blog: 'src/blog',
+		}
   }
 };
 
