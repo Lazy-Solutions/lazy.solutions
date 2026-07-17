@@ -169,10 +169,6 @@ image: first-post-banner.webp\r
 published: true\r
 ---\r
 \r
-# Welcome to the Lazy Solutions Blog\r
-\r
-Welcome to the Lazy Solutions blog.\r
-\r
 This is where we will share Unity development insights, articles, and lessons learned while building assets for game developers.\r
 \r
 ## About Lazy Solutions\r
