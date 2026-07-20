@@ -1,162 +1,130 @@
 ---
-title: Unity Scene Management Best Practices in Unity 6
-target: Unity scene management best practices
-date: 2026-07-17
-description: Learn practical Unity scene management best practices for Unity 6, from scene organization to additive loading and scalable project architecture.
-image: image.png
-published: false
+title: How to Access Internal Classes and Methods in Unity
+target: how to access internal classes and methods in unity
+date: 2026-07-20
+description: Found an internal Unity API you want to use? Learn how bridge classes can safely wrap internal classes and methods while keeping your code maintainable.
+image: broken-unity.webp
+published: true
 ---
 
-Good scene management is about more than loading levels. It's about organizing your project so it's easier to build, test, and maintain as it grows.
+Have you ever inspected a Unity package, or a third party asset, and found an `internal` class or method you wished was public?
 
-For small projects, Unity's built in `SceneManager` is often all you need. As your game becomes more complex, following a few simple practices can save hours of debugging and refactoring later.
+Maybe it does exactly what you need, but trying to access it results in a compiler error.
 
-![Article image](image.png)
+The good news is that you can often work around this by creating a small bridge around the internal API. This lets you keep the internal access isolated while exposing only the functionality your project actually needs.
 
-## What Is Unity Scene Management?
+In this article, we'll look at how internal APIs work, how to create a bridge, and how to organize it correctly inside a Unity project.
 
-In Unity, a scene can represent much more than a level. It might be your main menu, gameplay, UI, lighting, or audio.
+## Why Are Some Unity APIs Internal?
 
-Scene management is deciding how these scenes are organized, loaded, and unloaded throughout your game.
+In C#, `internal` means that a class or method can only be accessed from within the same assembly.
 
-A good scene structure helps keep systems separated, while a poor one often leads to tightly coupled code that's difficult to maintain.
+A common confusion is thinking this is related to namespaces. It is not.
 
-## 1. Give Each Scene a Single Responsibility
-
-One of the most common mistakes is putting your entire game into one scene.
-
-While this works for prototypes, it quickly becomes difficult to navigate and maintain.
-
-Instead, split your project into scenes with clear responsibilities.
-
-```
-
-Scenes
-├── Bootstrap
-├── MainMenu
-├── Gameplay
-├── UI
-├── Lighting
-└── Audio
-
-````
-
-This makes your project easier to understand and allows multiple developers to work without constantly editing the same scene.
-
-> **Image idea:** Compare a single large scene with a modular scene structure.
-
-## 2. Use Additive Scene Loading When It Makes Sense
-
-Not every project needs additive loading, but it's a great way to separate systems in larger games.
-
-For example, your gameplay, UI, and lighting can all exist in separate scenes.
+A namespace only organizes your code:
 
 ```csharp
-using UnityEngine.SceneManagement;
-
-SceneManager.LoadScene(
-    "UI",
-    LoadSceneMode.Additive
-);
-````
-
-This keeps each scene focused on one job and makes individual systems easier to replace or test.
-
-## 3. Start From a Bootstrap Scene
-
-Rather than launching directly into gameplay, consider using a small Bootstrap scene.
-
-Its only responsibility is preparing your game before loading the first playable scene.
-
-Typical tasks include:
-
-* Loading player settings
-* Initializing managers
-* Opening the main menu
-
-Keeping startup logic in one place makes it much easier to maintain.
-
-> **Image idea:** Bootstrap → Main Menu → Gameplay flow diagram.
-
-## 4. Avoid Hardcoded Scene Names
-
-Loading scenes by name is simple:
-
-```csharp
-SceneManager.LoadScene("Gameplay");
+namespace MyGame.Inventory
+{
+    public class InventoryManager
+    {
+    }
+}
 ```
 
-The downside is that renaming a scene won't produce a compile error.
+Another script can access this class by importing the namespace:
 
-As projects grow, consider using centralized scene references or a scene management system instead of scattering string names throughout your code.
+```csharp
+using MyGame.Inventory;
+```
 
-## 5. Keep Persistent Objects to a Minimum
+Access modifiers like `internal` work differently. They are based on assemblies, which are the compiled units of your code.
 
-`DontDestroyOnLoad` is useful, but it shouldn't be your default solution.
+In Unity, scripts are compiled into assemblies. By default, most scripts are part of assemblies such as `Assembly-CSharp`, but packages and projects can define their own assemblies.
 
-Only systems that genuinely need to survive scene changes should persist.
+Two scripts can share the same namespace and still be unable to access each other if they belong to different assemblies.
 
-Everything else should belong to the scene that owns it.
+```csharp
+internal class InventoryManager
+{
+    internal void Refresh()
+    {
+    }
+}
+```
 
-This keeps dependencies clear and makes debugging much easier.
+This class is only available inside its own assembly.
 
-## 6. Plan for Growth
+This is intentional. Marking APIs as `internal` allows developers to hide implementation details while keeping the public API smaller and easier to maintain.
 
-A project with five scenes is easy to manage.
+## Referencing the Package Assembly
 
-A project with fifty scenes isn't.
+Before creating the bridge, your project needs to be able to access the assembly containing the internal API.
 
-Choosing consistent naming, folder structures, and scene responsibilities early helps prevent major refactoring later.
+Unity packages are often compiled into their own assemblies.
+An Assembly Definition Reference (`.asmref`) tells Unity that scripts inside a folder should be compiled as part of another assembly.
 
-Good architecture isn't about making things more complicated. It's about making future development simpler.
+For example, create a folder for your bridge:
 
-## When Is Unity's SceneManager Enough?
+```
+Assets/Utilities/SplineBridge/
+```
 
-For many games, Unity's built in SceneManager is all you need.
+Inside this folder, create an Assembly Definition Reference and point it to the assembly containing the internal API.
 
-If your project has relatively few scenes and straightforward transitions, there's little reason to add another layer of complexity.
+Now scripts inside this folder will be compiled as part of that assembly, allowing the bridge to access the internal classes and methods provided by the package.
 
-As your project grows, however, you'll often find yourself building systems for scene references, startup configurations, loading groups, and scene organization.
+## Creating the Bridge
 
-## Where Advanced Scene Manager 3 Helps
+Now that the assembly reference is set up, we can create the bridge.
 
-Advanced Scene Manager 3 builds on Unity's existing scene system rather than replacing it.
+A bridge is a small wrapper that exposes the functionality you need while keeping the original internal API access in one place.
 
-It helps organize larger projects by providing features such as scene collections, startup profiles, and structured scene references.
+For this example, we'll use Unity's Splines package.
 
-If you're building a small game, Unity's built in tools may be enough.
+In some Unity versions, `Spline.SetDirty` is an internal method. It is useful when modifying splines because it tells Unity that the spline data has changed.
 
-If you're managing dozens of scenes or working as part of a team, ASM3 can help keep your project organized without changing how Unity loads scenes.
+A simple bridge could look like this:
 
-## Frequently Asked Questions
+```csharp
+using UnityEngine.Splines;
 
-### Should I put my entire game in one scene?
+namespace MyGame.Utilities
+{
+    public static class SplineBridge
+    {
+        public static void SetDirty(this Spline spline, SplineModification modification = SplineModification.Default, int knotIndex = -1)
+            => spline.SetDirty(modification, knotIndex);       
+    }
+}
+```
 
-Generally, no. It's fine for prototypes, but separating responsibilities into multiple scenes creates a project that's easier to maintain.
+Adding the bridge to its own namespace is recommended. This avoids naming conflicts with other scripts or packages and makes it clear that this code belongs to your project.
 
-### Is additive scene loading always better?
+Now your project can use:
 
-No. It's most useful when different systems, such as UI, lighting, or gameplay, benefit from being developed independently.
+```csharp
+mySpline.SetDirty();
+```
 
-### Should I use `DontDestroyOnLoad` for every manager?
+Instead of accessing the internal API throughout your project, all internal access is contained inside the bridge.
 
-No. Only objects that truly need to persist across scene changes should use it.
+If Unity changes the internal implementation in a future version, you only need to update this one class.
 
-### Should I load scenes using strings?
+## A Note About Internal APIs
 
-It's acceptable for small projects, but larger projects usually benefit from centralized scene references to reduce runtime errors.
+While accessing internal APIs can be useful, it should not be the first solution you reach for.
 
-### Do I need Advanced Scene Manager 3?
+Public APIs are designed to be supported over time. Internal APIs do not have the same guarantees and can change, be renamed, or be removed between Unity versions.
 
-Not necessarily. Unity's SceneManager works well for many games. ASM3 becomes valuable as scene organization and project complexity increase.
+Important: When using bridges in a built player, especially with IL2CPP, these changes can cause runtime issues even if your project still compiles. Always test player builds on target platforms and be prepared to update or remove the bridge when upgrading Unity or packages.
+
+However, sometimes an internal API is the only practical solution. In those cases, keeping the access isolated behind a bridge is the safest approach.
 
 ## Conclusion
 
-Good scene management isn't about following strict rules. It's about creating a project that's easy to understand and maintain.
+Internal APIs can unlock functionality that is not currently exposed through Unity's public API.
 
-Start with clear scene responsibilities, use additive loading when it provides value, avoid unnecessary dependencies, and plan for growth.
+A bridge class gives you access to that functionality while keeping the dependency isolated to one location.
 
-Unity's built in tools provide a solid foundation, and when your project outgrows them, tools like Advanced Scene Manager 3 can help you organize increasingly complex scene architectures while staying true to Unity's native workflow.
-
-```
-```
+Use public APIs whenever possible. When you do need internal access, keep it contained, document why it exists, and be prepared to update it when Unity changes.
