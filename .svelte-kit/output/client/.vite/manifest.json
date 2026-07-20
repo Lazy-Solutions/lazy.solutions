@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.ClUYbm-8.js",
+    "file": "_app/immutable/entry/app.B0qx2g2M.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -23,13 +23,13 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "file": "_app/immutable/nodes/0.DftjHbXD.js",
+    "file": "_app/immutable/nodes/0.B5-K9Cf4.js",
     "name": "nodes/0",
     "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
     "imports": [
       "_Cl2OrdxH.js",
-      "_GUGG0Bud.js",
+      "_BN5ePWQd.js",
       "_xihTtKlq.js",
       "_DJtZkepv.js"
     ],
@@ -38,13 +38,13 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/1.js": {
-    "file": "_app/immutable/nodes/1.BVGUYlb-.js",
+    "file": "_app/immutable/nodes/1.Bj2-2EGW.js",
     "name": "nodes/1",
     "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
     "isEntry": true,
     "imports": [
       "_Cl2OrdxH.js",
-      "_GUGG0Bud.js",
+      "_BN5ePWQd.js",
       "_xihTtKlq.js"
     ]
   },
@@ -82,7 +82,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/5.js": {
-    "file": "_app/immutable/nodes/5.BAzQA1eN.js",
+    "file": "_app/immutable/nodes/5.Dk6nkGil.js",
     "name": "nodes/5",
     "src": ".svelte-kit/generated/client-optimized/nodes/5.js",
     "isEntry": true,
@@ -137,6 +137,14 @@
     "file": "_app/immutable/chunks/BModQ9UP.js",
     "name": "welcome-to-lazy-solutions-blog"
   },
+  "_BN5ePWQd.js": {
+    "file": "_app/immutable/chunks/BN5ePWQd.js",
+    "name": "client",
+    "imports": [
+      "_Cl2OrdxH.js",
+      "_CymRgjIC.js"
+    ]
+  },
   "_Cl2OrdxH.js": {
     "file": "_app/immutable/chunks/Cl2OrdxH.js",
     "name": "index-client"
@@ -164,25 +172,17 @@
     "file": "_app/immutable/chunks/DYl5dUZ5.js",
     "name": "preload-helper"
   },
-  "_GUGG0Bud.js": {
-    "file": "_app/immutable/chunks/GUGG0Bud.js",
-    "name": "client",
-    "imports": [
-      "_Cl2OrdxH.js",
-      "_CymRgjIC.js"
-    ]
-  },
   "_xihTtKlq.js": {
     "file": "_app/immutable/chunks/xihTtKlq.js",
     "name": "disclose-version"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.B0q87VLs.js",
+    "file": "_app/immutable/entry/start.DHTa2LiH.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
     "imports": [
-      "_GUGG0Bud.js"
+      "_BN5ePWQd.js"
     ]
   }
 }

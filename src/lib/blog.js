@@ -19,7 +19,8 @@ export function getPosts() {
 				slug,
 				title: data.title ?? slug,
 				date: data.date,
-				formattedDate: new Date(data.date).toLocaleDateString('en-UK', {
+				lastmod: data.lastmod ?? data.date,
+				formattedDate: new Date(data.date).toLocaleDateString('en-GB', {
 					year: 'numeric',
 					month: 'long',
 					day: 'numeric'

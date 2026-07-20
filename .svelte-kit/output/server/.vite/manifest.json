@@ -216,6 +216,15 @@
       "_server.js"
     ]
   },
+  "src/routes/sitemap.xml/+server.js": {
+    "file": "entries/endpoints/sitemap.xml/_server.js",
+    "name": "entries/endpoints/sitemap.xml/_server",
+    "src": "src/routes/sitemap.xml/+server.js",
+    "isEntry": true,
+    "imports": [
+      "_blog.js"
+    ]
+  },
   "src/routes/support/+page.svelte": {
     "file": "entries/pages/support/_page.svelte.js",
     "name": "entries/pages/support/_page.svelte",
