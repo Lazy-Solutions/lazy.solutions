@@ -10,9 +10,10 @@
   padding: 140px 20px 60px;
   border-bottom: 1px solid rgba(237, 243, 241, 0.16);
   background: radial-gradient(circle at 50% 50%, rgba(105, 182, 171, 0.15), transparent 70%),
-    linear-gradient(135deg, #162426 0%, #0d1517 100%);
-
+  linear-gradient(135deg, #162426 0%, #0d1517 100%);
+  
   img {
+    height: auto;
     max-height: 280px;
     filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.5));
   }
