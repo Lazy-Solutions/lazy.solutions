@@ -3,6 +3,11 @@ import { marked } from "marked";
 //#region src/routes/blog/[slug]/+page.svelte
 function _page($$renderer, $$props) {
 	$$renderer.component(($$renderer) => {
+		marked.use({ renderer: { link({ href, title, tokens }) {
+			const text = this.parser.parseInline(tokens);
+			const external = href.startsWith("http");
+			return `<a href="${href}"${title ? ` title="${title}"` : ""}${external ? " target=\"_blank\" rel=\"noopener noreferrer\"" : ""}>${text}</a>`;
+		} } });
 		let { data } = $$props;
 		const html$1 = derived(() => marked(data.content));
 		const schema = derived(() => ({

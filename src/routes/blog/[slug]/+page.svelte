@@ -1,6 +1,17 @@
 <script>
 	import { marked } from "marked";
 
+	marked.use({
+		renderer: {
+			link({ href, title, tokens }) {
+				const text = this.parser.parseInline(tokens);
+				const external = href.startsWith('http');
+
+				return `<a href="${href}"${title ? ` title="${title}"` : ''}${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`;
+			}
+		}
+	});
+
 	let { data } = $props();
 	const html = $derived(marked(data.content));
 

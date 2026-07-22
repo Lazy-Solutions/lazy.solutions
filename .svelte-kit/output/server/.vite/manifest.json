@@ -20,7 +20,7 @@
     "file": "chunks/blog.js",
     "name": "blog",
     "imports": [
-      "_welcome-to-lazy-solutions-blog.js"
+      "_why-we-use-partial-classes-when-building-unity-tools.js"
     ]
   },
   "_client.js": {
@@ -72,9 +72,9 @@
       "_shared.js"
     ]
   },
-  "_welcome-to-lazy-solutions-blog.js": {
-    "file": "chunks/welcome-to-lazy-solutions-blog.js",
-    "name": "welcome-to-lazy-solutions-blog"
+  "_why-we-use-partial-classes-when-building-unity-tools.js": {
+    "file": "chunks/why-we-use-partial-classes-when-building-unity-tools.js",
+    "name": "why-we-use-partial-classes-when-building-unity-tools"
   },
   "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
     "file": "remote-entry.js",
@@ -130,7 +130,7 @@
       "_client.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.BtcVHdLG.css"
+      "_app/immutable/assets/_layout.EIHxBrfK.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -176,7 +176,7 @@
     "src": "src/routes/blog/[slug]/+page.js",
     "isEntry": true,
     "imports": [
-      "_welcome-to-lazy-solutions-blog.js"
+      "_why-we-use-partial-classes-when-building-unity-tools.js"
     ]
   },
   "src/routes/blog/[slug]/+page.svelte": {

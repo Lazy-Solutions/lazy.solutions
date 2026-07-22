@@ -1,9 +1,9 @@
-import { n as unity_scene_management_best_practices_default, t as welcome_to_lazy_solutions_blog_default } from "./welcome-to-lazy-solutions-blog.js";
+import { n as how_to_access_internal_classes_and_methods_in_unity_default, t as why_we_use_partial_classes_when_building_unity_tools_default } from "./why-we-use-partial-classes-when-building-unity-tools.js";
 import matter from "gray-matter";
 //#region src/lib/blog.js
 var posts = /* #__PURE__ */ Object.assign({
-	"/src/blog/unity-scene-management-best-practices.md": unity_scene_management_best_practices_default,
-	"/src/blog/welcome-to-lazy-solutions-blog.md": welcome_to_lazy_solutions_blog_default
+	"/src/blog/how-to-access-internal-classes-and-methods-in-unity.md": how_to_access_internal_classes_and_methods_in_unity_default,
+	"/src/blog/why-we-use-partial-classes-when-building-unity-tools.md": why_we_use_partial_classes_when_building_unity_tools_default
 });
 function getPosts() {
 	return Object.entries(posts).map(([path, content]) => {

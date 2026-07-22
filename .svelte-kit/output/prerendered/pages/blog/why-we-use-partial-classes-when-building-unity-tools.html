@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link href="../_app/immutable/entry/start.CFu8mrVG.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DwK9bXHe.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/Cl2OrdxH.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CymRgjIC.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/app.lieRLqwm.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DYl5dUZ5.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/0.CdUSIlwD.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/DJtZkepv.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/6.0_AR28NJ.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BmjLfQPq.js" rel="modulepreload">
+		<!--1teoznn--><meta name="description" content="Learn why we use partial classes when building Unity tools and how they help organize large C# systems into maintainable, easy to navigate code."/> <meta name="author" content="Patric Keisala"/> <link rel="canonical" href="https://lazy.solutions/blog/why-we-use-partial-classes-when-building-unity-tools"/> <meta property="og:title" content="Why We Use Partial Classes When Building Unity Tools | Lazy Solutions"/> <meta property="og:description" content="Learn why we use partial classes when building Unity tools and how they help organize large C# systems into maintainable, easy to navigate code."/> <meta property="og:image" content="https://lazy.solutionspartial-classes.webp"/> <meta property="og:url" content="https://lazy.solutions/blog/why-we-use-partial-classes-when-building-unity-tools"/> <meta property="og:type" content="article"/> <meta property="article:published_time" content="2026-07-22"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="Why We Use Partial Classes When Building Unity Tools | Lazy Solutions"/> <meta name="twitter:description" content="Learn why we use partial classes when building Unity tools and how they help organize large C# systems into maintainable, easy to navigate code."/> <meta name="twitter:image" content="https://lazy.solutionspartial-classes.webp"/> <!----><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Why We Use Partial Classes When Building Unity Tools","description":"Learn why we use partial classes when building Unity tools and how they help organize large C# systems into maintainable, easy to navigate code.","image":"https://lazy.solutionspartial-classes.webp","datePublished":"2026-07-22","author":{"@type":"Person","name":"Patric Keisala"},"publisher":{"@type":"Organization","name":"Lazy Solutions","logo":{"@type":"ImageObject","url":"https://lazy.solutions/media/images/asm_feature.webp"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://lazy.solutions/blog/why-we-use-partial-classes-when-building-unity-tools"}}</script><!----><!----><title>Why We Use Partial Classes When Building Unity Tools | Lazy Solutions</title>
+		<link href="../_app/immutable/assets/0.BEeDtOXM.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><nav id="navigation" aria-label="Primary navigation"><a class="brand-mark" href="/" aria-label="Lazy Solutions home"><img class="lazy_icon" src="/media/images/logo.svg" alt="Lazy Solutions Homepage" height="35" width="42"/> <span class="brand-name">Lazy Solutions</span></a> <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><!--[0--><svg data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars " role="img" viewBox="0 0 448 512" aria-hidden="true"><!----><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"></path><!----></svg><!--]--><!----></button> <div class="nav-links"><a href="/#Projects">Projects</a> <a href="/blog">Blog</a> <a href="/#About">About Us</a> <a href="/#navbar-footer">Social</a> <a target="_blank" rel="noopener noreferrer sponsored" href="https://af.unity.com/sr/camref:1100ljPVc/pubref:website/destination:https://assetstore.unity.com/publishers/48996">Asset Store</a> <a href="/support">Support</a></div></nav><!----> <!--[--><!--[--><article class="blog-article"><header class="article-header"><time datetime="2026-07-22">2026-07-22</time> <h1>Why We Use Partial Classes When Building Unity Tools</h1></header> <div class="article-content"><!----><p>We use partial classes extensively when building our Unity tools. If you&#39;ve explored the source code of Advanced Scene Manager, you&#39;ve probably noticed that many of its larger types are split across multiple files. </p>
+<p>In this article, we&#39;ll explain what partial classes are, why we use them, and how they&#39;ve become an important part of the way we build Unity tools.</p>
+<h2>What Are Partial Classes?</h2>
+<p>Partial classes is a C# feature that allows a single class to be split across multiple files.</p>
+<p>Lets take a GameManager class for example.</p>
+<p>Imagine you have </p>
+<pre><code class="language-csharp">public class GameManager : MonoBehaviour
+{
+    public GameMode gameMode { get; set; }
+
+    void Start() {}
+
+    public event Action OnEvent;
+
+    static void DoSomething() {}
+}
+</code></pre>
+<p>As the class grows, different parts of the functionality can become harder to navigate.</p>
+<p>With partial classes, you can split the same class into multiple files:</p>
+<pre><code>GameManager.cs
+GameManager.Statics.cs
+GameManager.Initialization.cs
+GameManager.Events.cs
+</code></pre>
+<pre><code class="language-csharp">public partial class GameManager : MonoBehaviour
+{
+    public GameMode gameMode { get;set; }
+}
+public partial class GameManager : MonoBehaviour
+{
+    void Start()
+    {
+        Debug.Log($&quot;Current Gamemode: {gameMode}&quot;);
+    }
+}
+public partial class GameManager
+{
+    static void DoSomething() {}
+}
+public partial class GameManager
+{
+    public event Action OnEvent;
+}
+</code></pre>
+<p>Although these members live in different files, the compiler combines them into a single GameManager class. Partial classes don&#39;t create inheritance or additional objects. They are purely an organizational feature.</p>
+<p>For a more detailed explanation of partial classes, including how the compiler combines the different parts and additional features such as partial members, see Microsoft&#39;s documentation on <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods" target="_blank" rel="noopener noreferrer">Partial Classes and Members</a>.</p>
+<h2>How Do We Use Partial Classes In Advanced Scene Manager?</h2>
+<p>The previous example was intentionally small. The benefits become much more apparent when building larger Unity tools.</p>
+<p>Here&#39;s how some of the larger classes in Advanced Scene Manager are organized.</p>
+<p><img src="/media/blog/partials.webp" alt="Partials files example"></p>
+<p>As you can see, our core classes are split into several partial files. Runtime is divided into nine files, while SceneOperation is divided into eight. Each partial groups related functionality together, making it much easier to find the code you&#39;re looking for.</p>
+<p>Runtime contains much of the core runtime logic, including scene tracking, loading queues, events, and other systems responsible for managing scenes during play.</p>
+<p>SceneOperation represents a single scene loading operation. Rather than placing every step of the loading process into one massive source file, each stage is implemented in its own partial.</p>
+<p>Here&#39;s the core execution loop:</p>
+<pre><code class="language-csharp">IEnumerator Run()
+{
+
+    wasCancelled = false;
+
+    yield return PrepareForExecution();
+
+    if (wasCancelled)
+        yield break;
+
+    yield return ShowLoadingScreen();
+
+    yield return CloseScenes();
+    yield return OpenScenes();
+    yield return PreloadScenes();
+
+    yield return PerformFinalSteps();
+    yield return HideLoadingScreen();
+
+    yield return FinalizeExecution();
+
+}
+</code></pre>
+<p>The Run() method reads almost like a checklist, while the implementation of each step lives in another partial file dedicated to that area of responsibility. This keeps the main execution flow easy to follow without sacrificing organization.</p>
+<p>If every loading stage, helper method, callback, and field lived in a single file, SceneOperation would quickly become much harder to navigate. Splitting the class into partials allows us to organize related code without introducing unnecessary classes or abstractions.</p>
+<h2>How ASM Evolved From Large Scripts</h2>
+<p>Advanced Scene Manager did not start with the architecture it has today. Like many Unity projects, early versions were built around simpler scripts that grew as new features were added.</p>
+<p>As ASM developed, some of those scripts became difficult to maintain. We experimented with different ways of organizing the code, including using regions to group related functionality inside files.</p>
+<p>Regions helped separate sections visually, but they had limitations. The code was still contained within the same file, and navigating large systems could become difficult as more features were added.</p>
+<p>Over time, we started rewriting and restructuring parts of ASM. During that process, partial classes became one of the patterns we adopted to better organize larger systems.</p>
+<p>Instead of grouping everything inside one file, responsibilities could be separated into dedicated files while still remaining part of the same class.</p>
+<p>This approach allowed us to keep related functionality together while making each file easier to understand and navigate.</p>
+<h2>Why We Use Partial Classes Throughout Advanced Scene Manager</h2>
+<p>Today, partial classes are used throughout ASM. Most system classes are split into partial files, while smaller models and simple utility classes usually remain in a single file.</p>
+<p>We use this approach because Unity tools often grow over time. A class that starts simple can eventually contain editor functionality, runtime logic, events, serialization, and utility methods.</p>
+<p>By splitting classes from the beginning, we avoid large files becoming difficult to navigate later.</p>
+<h2>The Drawback Of Partial Classes</h2>
+<p>Partial classes are not without drawbacks.</p>
+<p>One thing you notice when working with partial classes in Visual Studio is that navigation behaves slightly differently. When using F12 to go to a method or property implementation, Visual Studio may first show a list of all partial files containing that class instead of taking you directly to the implementation.</p>
+<p>This means you need to know how the class is organized and which partial file contains the code you are looking for.</p>
+<p>For us, this tradeoff is worth it. The benefit of having related functionality grouped into separate files outweighs the small inconvenience when navigating. However, it is something to keep in mind when deciding how to structure your own classes.</p>
+<h2>Final Thoughts</h2>
+<p>Partial classes are a small feature, but they have become an important part of how we structure larger Unity tools.</p>
+<p>They allow us to keep related functionality together while separating different responsibilities into files that are easier to navigate. For us, this has become a practical way to manage the growth of systems like Advanced Scene Manager.</p>
+<p>If you want to see this approach applied in a production Unity tool, check out Advanced Scene Manager.</p>
+<p><a href="/advanced-scene-manager">Learn more about Advanced Scene Manager</a></p>
+<!----></div></article><!--]--><!--]--> <footer id="navbar-footer"><div class="footer-inner"><div class="footer-brand"><p>Professional Unity assets and production tools from Sweden.</p></div> <div class="footer-links"><h2>Social</h2> <nav class="social-media" aria-label="Social links"><a target="_blank" rel="noopener noreferrer" href="https://discord.com/invite/ayE4EHB6bQ" aria-label="Discord"><!--[0--><svg data-prefix="fab" data-icon="discord" class="svg-inline--fa fa-discord " role="img" viewBox="0 0 576 512" aria-hidden="true"><!----><path fill="currentColor" d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1 .1s-.6 .4-.8 .8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2c-41.3 7.1-81.6 19.6-119.7 37.1-.3 .1-.6 .4-.8 .7-76.2 113.8-97.1 224.9-86.9 334.5 0 .3 .1 .5 .2 .8s.3 .4 .5 .6c44.4 32.9 94 58 146.8 74.2 .4 .1 .8 .1 1.1 0s.7-.4 .9-.7c11.3-15.4 21.4-31.8 30-48.8 .1-.2 .2-.5 .2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6 .2-.9 .3-.5 .6-.7c3.1-2.3 6.2-4.7 9.1-7.1 .3-.2 .6-.4 .9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1 .7-.2 1-.2s.7 .2 .9 .4c2.9 2.4 6 4.9 9.1 7.2 .2 .2 .4 .4 .6 .7s.2 .6 .2 .9-.1 .6-.3 .9-.4 .5-.6 .6c-14.7 8.6-30 15.9-45.9 21.8-.2 .1-.5 .2-.7 .4s-.3 .4-.4 .7-.1 .5-.1 .8 .1 .5 .2 .8c8.8 17 18.8 33.3 30 48.8 .2 .3 .6 .6 .9 .7s.8 .1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2 .2-.2 .4-.4 .5-.6s.2-.5 .2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2zm195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2z"></path><!----></svg><!--]--><!----></a> <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@lazysolutions" aria-label="YouTube"><!--[0--><svg data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube " role="img" viewBox="0 0 576 512" aria-hidden="true"><!----><path fill="currentColor" d="M549.7 124.1C543.5 100.4 524.9 81.8 501.4 75.5 458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5C51.2 81.8 32.7 100.4 26.4 124.1 15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8 42.6 11.5 213.4 11.5 213.4 11.5s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6l0-162.4 142.7 81.2-142.7 81.2z"></path><!----></svg><!--]--><!----></a> <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Lazy_Solutions" aria-label="X"><!--[0--><svg data-prefix="fab" data-icon="x-twitter" class="svg-inline--fa fa-x-twitter " role="img" viewBox="0 0 448 512" aria-hidden="true"><!----><path fill="currentColor" d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"></path><!----></svg><!--]--><!----></a></nav></div> <div class="footer-meta"><p>This site contains Unity Asset Store affiliate links.</p> <p>© 2018 - 2026 Patric Keisala. All rights reserved.</p></div></div></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_mshfx0 = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.CFu8mrVG.js"),
+						import("../_app/immutable/entry/app.lieRLqwm.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

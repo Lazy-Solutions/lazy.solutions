@@ -1290,9 +1290,7 @@ footer p {
   margin-bottom: 8px;
 }
 .article-content img {
-  width: 100%;
-  border-radius: 12px;
-  margin: 40px 0;
+  margin: 40px auto;
 }
 .article-content blockquote {
   margin: 40px 0;
