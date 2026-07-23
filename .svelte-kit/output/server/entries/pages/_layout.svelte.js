@@ -3,7 +3,7 @@ import { O as attr, b as getContext, d as slot, f as spread_props, ft as fallbac
 import "../../chunks/client.js";
 import { config, icon, parse } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faDiscord, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faDiscord, faLinkedin, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 //#region node_modules/@sveltejs/kit/src/runtime/app/stores.js
 /**
 * A function that returns all of the contextual stores. On the server, this must be called during component initialization.
@@ -318,6 +318,8 @@ function Footer($$renderer) {
 	FontAwesomeIcon($$renderer, { icon: faYoutube });
 	$$renderer.push(`<!----></a> <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Lazy_Solutions" aria-label="X">`);
 	FontAwesomeIcon($$renderer, { icon: faXTwitter });
+	$$renderer.push(`<!----></a> <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/lazysolutions" aria-label="X">`);
+	FontAwesomeIcon($$renderer, { icon: faLinkedin });
 	$$renderer.push(`<!----></a></nav></div> <div class="footer-meta"><p>This site contains Unity Asset Store affiliate links.</p> <p>© 2018 - 2026 Patric Keisala. All rights reserved.</p></div></div></footer>`);
 }
 //#endregion

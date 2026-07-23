@@ -4,6 +4,7 @@
     faDiscord,
     faYoutube,
     faXTwitter,
+    faLinkedin,
   } from "@fortawesome/free-brands-svg-icons";
 </script>
 
@@ -17,31 +18,31 @@
       <h2>Social</h2>
 
       <nav class="social-media" aria-label="Social links">
-        <a
-          target="_blank"
+        <a target="_blank"
           rel="noopener noreferrer"
           href="https://discord.com/invite/ayE4EHB6bQ"
-          aria-label="Discord"
-        >
+          aria-label="Discord">
           <FontAwesomeIcon icon={faDiscord} />
         </a>
 
-        <a
-          target="_blank"
+        <a target="_blank"
           rel="noopener noreferrer"
           href="https://www.youtube.com/@lazysolutions"
-          aria-label="YouTube"
-        >
+          aria-label="YouTube">
           <FontAwesomeIcon icon={faYoutube} />
         </a>
 
-        <a
-          target="_blank"
+        <a target="_blank"
           rel="noopener noreferrer"
           href="https://twitter.com/Lazy_Solutions"
-          aria-label="X"
-        >
+          aria-label="X">
           <FontAwesomeIcon icon={faXTwitter} />
+        </a>
+        <a target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/company/lazysolutions"
+          aria-label="X">
+          <FontAwesomeIcon icon={faLinkedin} />
         </a>
       </nav>
     </div>
